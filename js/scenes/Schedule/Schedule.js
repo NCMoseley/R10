@@ -17,12 +17,15 @@ const Schedule = ({ data }) => (
   // StatusBar.setBarStyle('dark-content', true);
   <View style={styles.mainContainer}>
     <ScrollView>
+      <Text style={styles.description}>
+        {' '}
+        ScheduleScheduleScheduleScheduleScheduleScheduleScheduleScheduleScheduleScheduleScheduleScheduleScheduleScheduleScheduleScheduleScheduleScheduleScheduleScheduleSchedule{' '}
+      </Text>
       <FlatList
         data={data}
         renderItem={({ item }) => (
           <View style={styles.container}>
             <Text style={styles.titlesCodeOfConduct}> +{item.title} </Text>
-            <Text style={styles.description}> +{item.description} </Text>
           </View>
         )}
         keyExtractor={item => item.title}

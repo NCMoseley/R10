@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-// import About from '../About/About';
 import Faves from '../Faves/Faves';
 import { AppRegistry, ActivityIndicator, Text, Image, View } from 'react-native';
 // import Load from "react-native-loading-gif";
@@ -40,7 +39,7 @@ class FavesContainer extends Component {
         </View>
       );
     }
-    console.log(this.state.data);
+    // console.log(this.state.data);
     return <Faves data={this.state.data} />;
   }
 }
