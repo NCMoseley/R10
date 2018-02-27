@@ -1,34 +1,36 @@
-import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View } from "react-native";
+import React, { Component } from 'react';
+import { Text, View, AppRegistry } from 'react-native';
+import { NavigationProvider, StackNavigation, NavigationContext } from '@expo/ex-navigation';
+import Router from './navigation/routes';
+import About from './scenes/About/';
+import Store from './redux/modules/store';
+import { Provider } from 'react-redux';
 
-import AboutContainer from "./scenes/About/AboutContainer";
-
+const navigationContext = new NavigationContext({
+  router: Router,
+  store: Store,
+});
 export default class App extends Component {
   render() {
     return (
-      // style={styles.container}
-      <View>
-        <AboutContainer />
-      </View>
+      <Provider store={Store}>
+        <NavigationProvider context={navigationContext} router={Router}>
+          <StackNavigation initialRoute={Router.getRoute('About')} />
+        </NavigationProvider>
+      </Provider>
     );
   }
 }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     justifyContent: "center",
-//     alignItems: "center",
-//     backgroundColor: "#F5FCFF"
-//   },
-//   welcome: {
-//     fontSize: 20,
-//     textAlign: "center",
-//     margin: 10
-//   },
-//   instructions: {
-//     textAlign: "center",
-//     color: "#333333",
-//     marginBottom: 5
+// Without Routes:
+
+// export default class App extends Component {
+//   render() {
+//     return (
+//       // style={styles.container}
+//       <View>
+//         <AboutContainer />
+//       </View>
+//     );
 //   }
-// });
+// }

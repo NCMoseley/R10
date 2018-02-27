@@ -16,18 +16,22 @@ import { styles } from './styles';
 
 const About = ({ data }) => (
   // StatusBar.setBarStyle('dark-content', true);
+
   <View style={styles.mainContainer}>
-    {/* <StatusBar backgroundColor="blue" barStyle="dark-content" /> */}
-    <View style={styles.imageContainer}>
-      <Image
-        style={styles.image}
-        resizeMode="center"
-        source={require('../../assets/images/r10_logo.png')}
-      />
-    </View>
+    <StatusBar backgroundColor="blue" barStyle="dark-content" />
     <ScrollView>
-      <View style={styles.container}>
-        <Text>R10 is a conference that focuses on just about any topic related to dev.</Text>
+      <View style={styles.imageContainer}>
+        <Image
+          style={styles.image}
+          resizeMode="center"
+          source={require('../../assets/images/r10_logo.png')}
+        />
+      </View>
+
+      <View>
+        <Text style={styles.titleDescription}>
+          R10 is a conference that focuses on just about any topic related to dev.
+        </Text>
       </View>
 
       <View style={styles.container}>

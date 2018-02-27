@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import About from '../About/About';
-import { ActivityIndicator, Text, Image, View } from 'react-native';
+import { AppRegistry, ActivityIndicator, Text, Image, View } from 'react-native';
 // import Load from "react-native-loading-gif";
 import { styles } from './styles';
 
 class AboutContainer extends Component {
+  static route = {
+    navigationBar: {
+      title: 'About',
+    },
+  };
   constructor() {
     super();
     this.state = {
@@ -41,5 +46,4 @@ class AboutContainer extends Component {
     return <About data={this.state.data} />;
   }
 }
-
 export default AboutContainer;

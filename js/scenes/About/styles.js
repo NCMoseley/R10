@@ -8,12 +8,18 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   mainContainer: {
-    marginTop: 25,
+    // marginTop: 25,
     paddingRight: 20,
     paddingLeft: 20,
   },
   container: {
     marginTop: 15,
+    marginBottom: 15,
+  },
+  titleDescription: {
+    marginTop: 15,
+    marginBottom: 15,
+    justifyContent: 'center',
   },
   title: {
     fontSize: 30,
