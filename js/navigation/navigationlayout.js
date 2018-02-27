@@ -3,6 +3,7 @@ import { StackNavigation, TabNavigation, TabNavigationItem as TabItem } from '@e
 import Router from './../navigation/routes';
 import { colors } from '../config/styles';
 import { Text } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 class NavigationLayout extends Component {
   static route = {
@@ -13,21 +14,36 @@ class NavigationLayout extends Component {
   render() {
     return (
       <TabNavigation id="main" navigatorUID="main" initialTab="Schedule" tabBarColor={colors.black}>
-        <TabItem id="About" title="About" renderTitle={this.renderTitle}>
+        <TabItem
+          id="About"
+          title="About"
+          renderTitle={this.renderTitle}
+          renderIcon={isSelected => this.renderIcon(isSelected, 'ios-information-circle-outline')}
+        >
           <StackNavigation
             id="About"
             navigatorUID="About"
             initialRoute={Router.getRoute('About')}
           />
         </TabItem>
-        <TabItem id="Schedule" title="Schedule" renderTitle={this.renderTitle}>
+        <TabItem
+          id="Schedule"
+          title="Schedule"
+          renderTitle={this.renderTitle}
+          renderIcon={isSelected => this.renderIcon(isSelected, 'ios-calendar-outline')}
+        >
           <StackNavigation
             id="Schedule"
             navigatorUID="Schedule"
             initialRoute={Router.getRoute('Schedule')}
           />
         </TabItem>
-        <TabItem id="Faves" title="Faves" renderTitle={this.renderTitle}>
+        <TabItem
+          id="Faves"
+          title="Faves"
+          renderTitle={this.renderTitle}
+          renderIcon={isSelected => this.renderIcon(isSelected, 'ios-heart-outline')}
+        >
           <StackNavigation
             id="Faves"
             navigatorUID="Faves"
@@ -39,6 +55,9 @@ class NavigationLayout extends Component {
   }
   renderTitle(isSelected, title) {
     return <Text style={{ color: isSelected ? colors.white : colors.mediumGrey }}>{title}</Text>;
+  }
+  renderIcon(isSelected, iconName) {
+    return <Icon name={iconName} size={30} color={isSelected ? colors.white : colors.mediumGrey} />;
   }
 }
 export default NavigationLayout;
