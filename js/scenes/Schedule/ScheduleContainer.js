@@ -1,16 +1,17 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Schedule from '../Schedule/Schedule';
-import { connect } from 'react-redux';
-import { Text, Image, View } from 'react-native';
-import { styles } from './styles';
-import { fetchSchedule } from '../../redux/modules/schedule';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import Schedule from "../Schedule/Schedule";
+import { connect } from "react-redux";
+import { Text, Image, View } from "react-native";
+import { styles } from "./styles";
+import { fetchSchedule } from "../../redux/modules/schedule";
+
 // import { ScrollView, View, Image, Text, ActivityIndicator } from "react-native";
 class ScheduleContainer extends Component {
   static route = {
     navigationBar: {
-      title: 'Schedule',
-    },
+      title: "Schedule"
+    }
   };
 
   componentDidMount() {
@@ -23,7 +24,7 @@ class ScheduleContainer extends Component {
 
     return loading ? (
       <View style={styles.loadinggif}>
-        <Image source={require('../../assets/images/loading_blue.gif')} />
+        <Image source={require("../../assets/images/loading_blue.gif")} />
       </View>
     ) : (
       <Schedule data={data} />
@@ -34,7 +35,7 @@ class ScheduleContainer extends Component {
 const mapStateToProps = state => ({
   // convert states into props to pass in react class
   loading: state.schedule.loading,
-  data: state.schedule.data,
+  data: state.schedule.data
 });
 
 export default connect(mapStateToProps)(ScheduleContainer);
