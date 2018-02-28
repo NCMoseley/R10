@@ -16,6 +16,10 @@ export const styles = StyleSheet.create({
     marginTop: 15,
     marginBottom: 15,
   },
+  location: {
+    fontSize: 10,
+    color: '#999999',
+  },
   titleDescription: {
     marginTop: 15,
     marginBottom: 15,
@@ -28,10 +32,10 @@ export const styles = StyleSheet.create({
     fontFamily: 'Montserrat-Light',
   },
   dateTitle: {
-    fontSize: 20,
+    fontSize: 15,
     fontWeight: 'bold',
-    fontStyle: 'italic',
-    backgroundColor: 'lightgrey',
+    backgroundColor: '#e6e6e6',
+    fontFamily: 'Montserrat-Light',
   },
   titlesCodeOfConduct: {
     fontSize: 20,

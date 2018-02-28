@@ -16,21 +16,19 @@ import {
 import { styles } from './styles';
 
 const renderComponent1 = ({ data }) => (
-  <ScrollView>
-    <SectionList
-      sections={data}
-      renderItem={({ item }) => (
-        <View style={styles.container}>
-          <Text style={styles.title}>{item.title}</Text>
-          <Text>{item.location}</Text>
-        </View>
-      )}
-      renderSectionHeader={({ section }) => (
-        <Text style={styles.dateTitles}>{moment(section.title).format('LT')}</Text>
-      )}
-      keyExtractor={(item, index) => index}
-    />
-  </ScrollView>
+  <SectionList
+    sections={data}
+    renderItem={({ item }) => (
+      <View style={styles.container}>
+        <Text>{item.title}</Text>
+        <Text style={styles.location}>{item.location}</Text>
+      </View>
+    )}
+    renderSectionHeader={({ section }) => (
+      <Text style={styles.dateTitle}>{moment.unix(section.title).format('LT')}</Text>
+    )}
+    keyExtractor={(item, index) => index}
+  />
 );
 
 export default renderComponent1;

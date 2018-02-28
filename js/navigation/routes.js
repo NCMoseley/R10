@@ -11,4 +11,5 @@ export default createRouter(() => ({
   Schedule: () => ScheduleContainer,
   Layout: () => NavigationLayout,
   Faves: () => FavesContainer,
+  Session: () => Session,
 }));

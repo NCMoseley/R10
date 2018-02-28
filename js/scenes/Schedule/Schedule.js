@@ -15,9 +15,15 @@ import {
 
 import { styles } from './styles';
 
+_goToSession = () => {
+  this.props.navigator.push(Router.getRoute('Session'));
+};
+
 const Schedule = ({ data }) => (
   <View style={styles.mainContainer}>
-    <RenderComponent1 data={data} />
+    <Text onPress={this._goToSession}>
+      <RenderComponent1 data={data} />
+    </Text>
   </View>
 );
 export default Schedule;
