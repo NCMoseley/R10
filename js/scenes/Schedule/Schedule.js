@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import RenderComponent1 from '../../components/render/renderComponent1';
 import {
   Platform,
   StyleSheet,
@@ -9,28 +10,14 @@ import {
   ScrollView,
   FlatList,
   StatusBar,
+  SectionList,
 } from 'react-native';
 
 import { styles } from './styles';
 
 const Schedule = ({ data }) => (
-  // StatusBar.setBarStyle('dark-content', true);
   <View style={styles.mainContainer}>
-    <ScrollView>
-      <Text style={styles.description}>
-        {' '}
-        ScheduleScheduleScheduleScheduleScheduleScheduleScheduleScheduleScheduleScheduleScheduleScheduleScheduleScheduleScheduleScheduleScheduleScheduleScheduleScheduleSchedule{' '}
-      </Text>
-      <FlatList
-        data={data}
-        renderItem={({ item }) => (
-          <View style={styles.container}>
-            <Text style={styles.titlesCodeOfConduct}> +{item.title} </Text>
-          </View>
-        )}
-        keyExtractor={item => item.title}
-      />
-    </ScrollView>
+    <RenderComponent1 data={data} />
   </View>
 );
 export default Schedule;

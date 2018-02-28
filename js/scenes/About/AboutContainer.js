@@ -26,7 +26,7 @@ class AboutContainer extends Component {
         </View>
       );
     }
-    console.log(data);
+    // console.log(data);
     return <About data={data} />;
   }
 }
