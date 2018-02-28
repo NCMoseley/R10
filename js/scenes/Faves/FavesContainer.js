@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Faves from '../Faves/Faves';
-import { AppRegistry, ActivityIndicator, Text, Image, View } from 'react-native';
-// import Load from "react-native-loading-gif";
+import { Text, Image, View } from 'react-native';
 import { styles } from './styles';
 
 class FavesContainer extends Component {

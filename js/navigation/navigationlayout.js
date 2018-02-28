@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StackNavigation, TabNavigation, TabNavigationItem as TabItem } from '@expo/ex-navigation';
 import Router from './../navigation/routes';
-import { colors } from '../config/styles';
+import { colors, typography } from '../config/styles';
 import { Text } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -54,10 +54,20 @@ class NavigationLayout extends Component {
     );
   }
   renderTitle(isSelected, title) {
-    return <Text style={{ color: isSelected ? colors.white : colors.mediumGrey }}>{title}</Text>;
+    return (
+      <Text
+        style={{
+          fontFamily: typography.fontMain,
+          fontSize: 10,
+          color: isSelected ? colors.white : colors.mediumGrey,
+        }}
+      >
+        {title}
+      </Text>
+    );
   }
   renderIcon(isSelected, iconName) {
-    return <Icon name={iconName} size={30} color={isSelected ? colors.white : colors.mediumGrey} />;
+    return <Icon name={iconName} size={25} color={isSelected ? colors.white : colors.mediumGrey} />;
   }
 }
 export default NavigationLayout;

@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import About from '../About/About';
-import { AppRegistry, ActivityIndicator, Text, Image, View } from 'react-native';
-// import Load from "react-native-loading-gif";
+import { connect } from 'react-redux';
+import { View, Image, Text } from 'react-native';
 import { styles } from './styles';
+import { fetchCodeOfConduct } from '../../redux/modules/about';
 
 class AboutContainer extends Component {
   static route = {
@@ -11,39 +12,29 @@ class AboutContainer extends Component {
       title: 'About',
     },
   };
-  constructor() {
-    super();
-    this.state = {
-      data: [],
-      isLoading: true,
-    };
-  }
 
   componentDidMount() {
-    fetch('https://r10app-95fea.firebaseio.com/code_of_conduct.json')
-      .then(res => res.json())
-      .then(data => this.setState({ data }))
-      .catch(err => console.log(`Error fetching AboutContainer rest endpoint: ${err}`));
-  }
-  componentDidUpdate() {
-    if (this.state.isLoading) {
-      this.setState({ isLoading: false });
-    }
+    this.props.dispatch(fetchCodeOfConduct());
   }
 
   render() {
-    if (this.state.isLoading) {
+    const { loading, data } = this.props;
+    if (loading) {
       return (
-        // <View>
-        //   <Load ref="Load" />
-        // </View>
         <View style={styles.loadinggif}>
           <Image source={require('../../assets/images/loading_blue.gif')} />
         </View>
       );
     }
-    // console.log(this.state.data);
-    return <About data={this.state.data} />;
+    console.log(data);
+    return <About data={data} />;
   }
 }
-export default AboutContainer;
+
+const mapStateToProps = state => ({
+  // convert states into props to pass in react class
+  loading: state.about.loading,
+  data: state.about.data,
+});
+
+export default connect(mapStateToProps)(AboutContainer);

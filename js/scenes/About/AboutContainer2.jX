@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Schedule from '../Schedule/Schedule';
-import { Text, Image, View } from 'react-native';
+import About from '../About/About';
+import { AppRegistry, ActivityIndicator, Text, Image, View } from 'react-native';
+// import Load from "react-native-loading-gif";
 import { styles } from './styles';
 
-class ScheduleContainer extends Component {
+class AboutContainer extends Component {
   static route = {
     navigationBar: {
-      title: 'Schedule',
+      title: 'About',
     },
   };
   constructor() {
@@ -19,7 +20,7 @@ class ScheduleContainer extends Component {
   }
 
   componentDidMount() {
-    fetch('https://r10app-95fea.firebaseio.com/cXXXde_of_conduct.json')
+    fetch('https://r10app-95fea.firebaseio.com/code_of_conduct.json')
       .then(res => res.json())
       .then(data => this.setState({ data }))
       .catch(err => console.log(`Error fetching AboutContainer rest endpoint: ${err}`));
@@ -39,7 +40,7 @@ class ScheduleContainer extends Component {
       );
     }
     // console.log(this.state.data);
-    return <Schedule data={this.state.data} />;
+    return <About data={this.state.data} />;
   }
 }
-export default ScheduleContainer;
+export default AboutContainer;

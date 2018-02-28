@@ -3,7 +3,7 @@ import { Text, View, AppRegistry } from 'react-native';
 import { NavigationProvider, StackNavigation, NavigationContext } from '@expo/ex-navigation';
 import Router from './navigation/routes';
 import About from './scenes/About/';
-import Store from './redux/modules/store';
+import Store from './redux/store';
 import { Provider } from 'react-redux';
 
 const navigationContext = new NavigationContext({
