@@ -16,3 +16,9 @@ open "rndebugger://set-debugger-loc?host=localhost&port=8081"
 new branch created:
 
 withredux
+
+## References
+
+Thank you to Lindsey Woo for constant support and code design inspiration:
+
+https://github.com/science-girl/R10
