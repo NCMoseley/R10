@@ -36,7 +36,7 @@ const Schedule = ({ data }) => (
     <SectionList
       sections={data}
       renderItem={({ item }) => (
-        <TouchableHighlight onPress={() => goToSession("Schedule", { data })}>
+        <TouchableHighlight onPress={() => goToSession("Schedule", { item })}>
           <View style={styles.container}>
             <Text>{item.title}</Text>
             <Text style={styles.location}>{item.location}</Text>

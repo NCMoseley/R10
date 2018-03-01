@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-
+import React, { Component } from "react";
+import PropTypes from "prop-types";
 import {
   Platform,
   StyleSheet,
@@ -9,10 +8,10 @@ import {
   Image,
   ScrollView,
   FlatList,
-  StatusBar,
-} from 'react-native';
+  StatusBar
+} from "react-native";
 
-import { styles } from './styles';
+import { styles } from "./styles";
 
 const About = ({ data }) => (
   // StatusBar.setBarStyle('dark-content', true);
@@ -24,13 +23,14 @@ const About = ({ data }) => (
         <Image
           style={styles.image}
           resizeMode="center"
-          source={require('../../assets/images/r10_logo.png')}
+          source={require("../../assets/images/r10_logo.png")}
         />
       </View>
 
       <View>
         <Text style={styles.titleDescription}>
-          R10 is a conference that focuses on just about any topic related to dev.
+          R10 is a conference that focuses on just about any topic related to
+          dev.
         </Text>
       </View>
 
@@ -40,7 +40,8 @@ const About = ({ data }) => (
 
       <View style={styles.container}>
         <Text>
-          Don't miss the R10 conference that will take place on June 27, 2018 in Vancouver, BC.
+          Don't miss the R10 conference that will take place on June 27, 2018 in
+          Vancouver, BC.
         </Text>
       </View>
 

@@ -20,15 +20,16 @@ class ScheduleContainer extends Component {
 
   render() {
     const { loading, data } = this.props;
-    console.log(data);
+    // console.log(data);
+
 
     return loading ? (
       <View style={styles.loadinggif}>
         <Image source={require("../../assets/images/loading_blue.gif")} />
       </View>
     ) : (
-      <Schedule data={data} />
-    );
+        <Schedule data={data} />
+      );
   }
 }
 
