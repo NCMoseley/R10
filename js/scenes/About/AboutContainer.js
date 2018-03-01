@@ -1,16 +1,17 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import About from '../About/About';
-import { connect } from 'react-redux';
-import { View, Image, Text } from 'react-native';
-import { styles } from './styles';
-import { fetchCodeOfConduct } from '../../redux/modules/about';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import About from "../About/About";
+import { connect } from "react-redux";
+import { View, Image, Text } from "react-native";
+import { styles } from "./styles";
+import { fetchCodeOfConduct } from "../../redux/modules/about";
 
 class AboutContainer extends Component {
   static route = {
     navigationBar: {
-      title: 'About',
-    },
+      title: "About",
+      tintColor: "grey"
+    }
   };
 
   componentDidMount() {
@@ -22,7 +23,7 @@ class AboutContainer extends Component {
     if (loading) {
       return (
         <View style={styles.loadinggif}>
-          <Image source={require('../../assets/images/loading_blue.gif')} />
+          <Image source={require("../../assets/images/loading_blue.gif")} />
         </View>
       );
     }
@@ -34,7 +35,7 @@ class AboutContainer extends Component {
 const mapStateToProps = state => ({
   // convert states into props to pass in react class
   loading: state.about.loading,
-  data: state.about.data,
+  data: state.about.data
 });
 
 export default connect(mapStateToProps)(AboutContainer);

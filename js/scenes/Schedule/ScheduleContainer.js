@@ -7,10 +7,12 @@ import { styles } from "./styles";
 import { fetchSchedule } from "../../redux/modules/schedule";
 
 // import { ScrollView, View, Image, Text, ActivityIndicator } from "react-native";
+
 class ScheduleContainer extends Component {
   static route = {
     navigationBar: {
-      title: "Schedule"
+      title: "Schedule",
+      tintColor: "grey"
     }
   };
 
@@ -22,14 +24,13 @@ class ScheduleContainer extends Component {
     const { loading, data } = this.props;
     // console.log(data);
 
-
     return loading ? (
       <View style={styles.loadinggif}>
         <Image source={require("../../assets/images/loading_blue.gif")} />
       </View>
     ) : (
-        <Schedule data={data} />
-      );
+      <Schedule data={data} />
+    );
   }
 }
 

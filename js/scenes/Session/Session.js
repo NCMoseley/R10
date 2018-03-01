@@ -14,24 +14,28 @@ import {
   StatusBar,
   SectionList
 } from "react-native";
-import {
-  styles
-} from "./styles";
+import { styles } from "./styles";
 
 // componentDidMount() {
 //     this.props.dispatch(fetchSpeaker(speakerid));
 // }
 
 const Session = ({ data, name, image }) => (
-  <View style={styles.mainContainer} >
-    <Text style={styles.description} > {data.item.location} </Text> <Text style={styles.titlesCodeOfConduct} > {data.item.title} </Text> <Text > {moment.unix(data.item.start_time).format("LT")} </Text> <Text style={styles.description} > {data.item.description} </Text> <Text> Presented by: </Text> <Image style={{
-      width: 50,
-      height: 50,
-      borderRadius: 50
-    }} source={{ uri: image }
-    }
+  <View style={styles.mainContainer}>
+    <Text style={styles.description}>{data.item.location}</Text>
+    <Text style={styles.titlesCodeOfConduct}>{data.item.title}</Text>
+    <Text>{moment.unix(data.item.start_time).format("LT")}</Text>
+    <Text style={styles.description}>{data.item.description}</Text>
+    <Text>Presented by: </Text>
+    <Image
+      style={{
+        width: 50,
+        height: 50,
+        borderRadius: 50
+      }}
+      source={{ uri: image }}
     />
-    <Text> {name} </Text>
+    <Text>{name}</Text>
   </View>
 );
 

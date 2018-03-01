@@ -1,26 +1,12 @@
-import React, {
-  Component
-} from "react";
+import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Session from "./Session";
-import {
-  connect
-} from "react-redux";
-import {
-  Text,
-  Image,
-  View
-} from "react-native";
-import {
-  styles
-} from "./styles";
-import {
-  fetchSchedule
-} from "../../redux/modules/schedule";
+import { connect } from "react-redux";
+import { Text, Image, View } from "react-native";
+import { styles } from "./styles";
+import { fetchSchedule } from "../../redux/modules/schedule";
 import router from "../../navigation/routes";
-import {
-  formatDataObject
-} from "../../lib/helpers";
+import { formatDataObject } from "../../lib/helpers";
 // import { ScrollView, View, Image, Text, ActivityIndicator } from "react-native";
 class SessionContainer extends Component {
   constructor(props) {
@@ -31,7 +17,8 @@ class SessionContainer extends Component {
   }
   static route = {
     navigationBar: {
-      title: "Session"
+      title: "Session",
+      tintColor: "grey"
     }
   };
 
@@ -39,8 +26,8 @@ class SessionContainer extends Component {
     this.props.dispatch(fetchSchedule());
     const speakerId = this.props.route.params.sessionData.item.speaker;
     fetch(
-        `https://r10app-95fea.firebaseio.com/speakers.json?orderBy="speaker_id"&equalTo="${speakerId}"`
-      )
+      `https://r10app-95fea.firebaseio.com/speakers.json?orderBy="speaker_id"&equalTo="${speakerId}"`
+    )
       .then(res => res.json())
       .then(res => {
         let thisSpeaker = formatDataObject(res);
@@ -53,40 +40,19 @@ class SessionContainer extends Component {
   }
 
   render() {
-    const {
-      loading,
-      data
-    } = this.props;
+    const { loading, data } = this.props;
     // console.log(data);
     // console.log(this.state.speaker);
 
-    return loading ? ( <
-      View style = {
-        styles.loadinggif
-      } >
-      <
-      Image source = {
-        require("../../assets/images/loading_blue.gif")
-      }
-      /> <
-      /View>
-
-
-
+    return loading ? (
+      <View style={styles.loadinggif}>
+        <Image source={require("../../assets/images/loading_blue.gif")} />
+      </View>
     ) : (
-
-
-
-      <
-      Session data = {
-        this.props.route.params.sessionData
-      }
-      name = {
-        this.state.speaker
-      }
-      image = {
-        this.state.image
-      }
+      <Session
+        data={this.props.route.params.sessionData}
+        name={this.state.speaker}
+        image={this.state.image}
       />
     );
   }
