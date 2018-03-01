@@ -22,16 +22,17 @@ import {
 //     this.props.dispatch(fetchSpeaker(speakerid));
 // }
 
-const Session = ({ data, name, image }) => (<View style={styles.mainContainer} >
-  <Text style={styles.description} > {data.item.location} </Text> <Text style={styles.titlesCodeOfConduct} > {data.item.title} </Text> <Text > {moment.unix(data.item.start_time).format("LT")} </Text> <Text style={styles.description} > {data.item.description} </Text> <Text> Presented by: </Text> <Image style={{
-    width: 50,
-    height: 50,
-    borderRadius: 50
-  }} source={{ uri: image }
-  }
-  />
-  <Text> {name} </Text>
-</View>
+const Session = ({ data, name, image }) => (
+  <View style={styles.mainContainer} >
+    <Text style={styles.description} > {data.item.location} </Text> <Text style={styles.titlesCodeOfConduct} > {data.item.title} </Text> <Text > {moment.unix(data.item.start_time).format("LT")} </Text> <Text style={styles.description} > {data.item.description} </Text> <Text> Presented by: </Text> <Image style={{
+      width: 50,
+      height: 50,
+      borderRadius: 50
+    }} source={{ uri: image }
+    }
+    />
+    <Text> {name} </Text>
+  </View>
 );
 
 export default Session;
