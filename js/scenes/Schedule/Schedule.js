@@ -6,7 +6,7 @@ import moment from "moment";
 import Router from "../../navigation/routes";
 import Store from "../../redux/store";
 import { NavigationActions } from "@expo/ex-navigation";
-// import goToSession from "../../lib/navigationHelpers";
+import { goToSession } from "../../lib/navigationHelpers";
 import {
   Platform,
   StyleSheet,
@@ -20,15 +20,6 @@ import {
   TouchableHighlight
 } from "react-native";
 import { styles } from "./styles";
-
-const goToSession = (currentNavigatorUID, sessionData) => {
-  Store.dispatch(
-    NavigationActions.push(
-      currentNavigatorUID,
-      Router.getRoute("Session", { sessionData })
-    )
-  );
-};
 
 const Schedule = ({ data }) => (
   <View style={styles.mainContainer}>

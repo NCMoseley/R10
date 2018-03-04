@@ -12,31 +12,130 @@ import {
   ScrollView,
   FlatList,
   StatusBar,
-  SectionList
+  SectionList,
+  TouchableHighlight,
+  TouchableOpacity
 } from "react-native";
+import { goToSpeaker } from "../../lib/navigationHelpers";
 import { styles } from "./styles";
 
-// componentDidMount() {
-//     this.props.dispatch(fetchSpeaker(speakerid));
-// }
-
-const Session = ({ data, name, image }) => (
+const Session = ({ event, speaker }) => (
   <View style={styles.mainContainer}>
-    <Text style={styles.description}>{data.item.location}</Text>
-    <Text style={styles.titlesCodeOfConduct}>{data.item.title}</Text>
-    <Text>{moment.unix(data.item.start_time).format("LT")}</Text>
-    <Text style={styles.description}>{data.item.description}</Text>
+    <Text style={styles.description}>
+      {(event.item.description, console.log(event.item.description))}
+    </Text>
+    <Text style={styles.titlesCodeOfConduct}>{event.item.title}</Text>
+    <Text>{moment.unix(event.item.start_time).format("LT")}</Text>
+    <Text style={styles.description}>{event.item.description}</Text>
     <Text>Presented by: </Text>
+
     <Image
       style={{
         width: 50,
         height: 50,
         borderRadius: 50
       }}
-      source={{ uri: image }}
+      source={{ uri: speaker.image }}
     />
-    <Text>{name}</Text>
+    {/* <TouchableOpacity onPress={() => goToSpeaker(bio)}> */}
+    <TouchableOpacity onPress={() => goToSpeaker(speaker)}>
+      {/* <Image
+          source={{ uri: speaker.image }}
+          style={{ height: 100, width: 100, borderRadius: 50 }}
+        /> */}
+      <Text>{speaker.name}</Text>
+    </TouchableOpacity>
+    {/* <TouchableHighlight onPress={() => goToSpeaker(console.log(bio))}>
+      <Text>{name}</Text>
+    </TouchableHighlight> */}
   </View>
+  // <Text> HI </Text>
 );
 
+Session.propTypes = {
+  // faves: PropTypes.array.isRequired,
+  // toggleFave: PropTypes.func.isRequired,
+  event: PropTypes.object.isRequired
+  // speaker: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
+};
+
 export default Session;
+
+// import React from "react";
+// import { Text, View, ScrollView, Image, TouchableOpacity } from "react-native";
+// // import GradientButton from "../../components/GradientButton";
+// import PropTypes from "prop-types";
+// // import FaveIcon from "../../components/FaveIcon";
+// import moment from "moment";
+// // import { toggleFave } from "../../redux/modules/faves";
+// import { connect } from "react-redux";
+// import { goToSpeaker } from "../../lib/navigationHelpers";
+// import { styles } from "./styles";
+
+// const Session = ({ event, speaker, faves, toggleFave }) => {
+//   return (
+//     <ScrollView>
+//       <View style={styles.iconView}>
+//         <Text style={styles.locationText}>{event.location}</Text>
+//         <View style={styles.icon}>
+//           {faves.includes(event.session_id) && <FaveIcon />}
+//         </View>
+//       </View>
+
+//       <Text style={styles.titleHeader}>{event.title}</Text>
+//       <Text style={styles.timeText}>
+//         {" "}
+//         {moment.unix(event.start_time).format("LT")}
+//       </Text>
+//       <Text style={styles.paragraphText}>{event.description}</Text>
+
+//       {speaker && (
+//         <View>
+//           <Text style={styles.presentedByText}>Presented by:</Text>
+//           <TouchableOpacity
+//             style={styles.presentedByView}
+//             onPress={() => goToSpeaker(speaker)}
+//           >
+//             <Image
+//               source={{ uri: speaker.image }}
+//               style={{ height: 70, width: 70, borderRadius: 35 }}
+//             />
+//             <Text style={styles.presenterText}>{speaker && speaker.name}</Text>
+//           </TouchableOpacity>
+//         </View>
+//       )}
+//       <View>
+//         <TouchableOpacity
+//           onPress={() =>
+//             toggleFave(event.session_id, !faves.includes(event.session_id))
+//           }
+//         >
+//           <GradientButton
+//             buttonText={
+//               faves.includes(event.session_id) ? "Remove Fave" : "Add Fave"
+//             }
+//           />
+//         </TouchableOpacity>
+//       </View>
+//     </ScrollView>
+//   );
+// };
+// const mapStateToProps = state => ({
+//   // convert states into props to pass in react class
+//   faves: state.faves.faves
+// });
+
+// const mapDispatchToProps = dispatch => ({
+//   toggleFave: (session_id, onOrOff) => {
+//     dispatch(toggleFave(session_id, onOrOff));
+//   }
+// });
+
+// Session.propTypes = {
+//   faves: PropTypes.array.isRequired,
+//   toggleFave: PropTypes.func.isRequired,
+//   event: PropTypes.object.isRequired,
+//   speaker: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
+// };
+
+// export default connect(mapStateToProps, mapDispatchToProps)(Session);

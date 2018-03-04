@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { Text, Image, View } from "react-native";
 import { styles } from "./styles";
 import { fetchSchedule } from "../../redux/modules/schedule";
+import { formatSessionData } from "../../lib/helpers";
 
 // import { ScrollView, View, Image, Text, ActivityIndicator } from "react-native";
 
@@ -22,14 +23,15 @@ class ScheduleContainer extends Component {
 
   render() {
     const { loading, data } = this.props;
-    // console.log(data);
+    const formattedData = formatSessionData(data);
+    // console.log(formattedData);
 
     return loading ? (
       <View style={styles.loadinggif}>
         <Image source={require("../../assets/images/loading_blue.gif")} />
       </View>
     ) : (
-      <Schedule data={data} />
+      <Schedule data={formattedData} />
     );
   }
 }

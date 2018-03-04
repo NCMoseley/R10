@@ -2,9 +2,10 @@ import AboutContainer from "../scenes/About";
 import { createRouter } from "@expo/ex-navigation";
 // import './navigationlayout';
 import NavigationLayout from "./nav";
-import ScheduleContainer from "../scenes/Schedule/ScheduleContainer";
-import FavesContainer from "../scenes/Faves/FavesContainer";
-import SessionContainer from "../scenes/Session/SessionContainer";
+import ScheduleContainer from "../scenes/Schedule";
+import FavesContainer from "../scenes/Faves";
+import SessionContainer from "../scenes/Session";
+import SpeakerContainer from "../scenes/Speaker";
 
 export default createRouter(() => ({
   // home: () => HomeScreen,
@@ -12,5 +13,6 @@ export default createRouter(() => ({
   Schedule: () => ScheduleContainer,
   Layout: () => NavigationLayout,
   Faves: () => FavesContainer,
-  Session: () => SessionContainer
+  Session: () => SessionContainer,
+  Speaker: () => SpeakerContainer
 }));

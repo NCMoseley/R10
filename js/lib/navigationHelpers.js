@@ -6,7 +6,22 @@ export const goToSession = (currentNavigatorUID, sessionData) => {
   Store.dispatch(
     NavigationActions.push(
       currentNavigatorUID,
-      Router.getRoute("Session", { sessionData: sessionData })
+      Router.getRoute("Session", { sessionData })
     )
   );
 };
+
+export const goToSpeaker = speakerData => {
+  Store.dispatch(
+    NavigationActions.push("root", Router.getRoute("Speaker", { speakerData }))
+  );
+};
+
+// const goToSession = (currentNavigatorUID, data) => {
+//   Store.dispatch(
+//     NavigationActions.push(
+//       currentNavigatorUID,
+//       Router.getRoute("Session", { data })
+//     )
+//   );
+// };

@@ -1,31 +1,32 @@
-import { SCHEDULE_URL } from '../../config/endpoints';
-import { formatSessionData } from '../../lib/helpers';
+import { SCHEDULE_URL } from "../../config/endpoints";
+import { formatSessionData } from "../../lib/helpers";
 
-const GET_SCHEDULE_LOADING = 'GET_SCHEDULE_LOADING';
-const GET_SCHEDULE_SUCCESS = 'GET_SCHEDULE_SUCCESS';
-const GET_SCHEDULE_ERROR = 'GET_SCHEDULE_ERROR';
+const GET_SCHEDULE_LOADING = "GET_SCHEDULE_LOADING";
+const GET_SCHEDULE_SUCCESS = "GET_SCHEDULE_SUCCESS";
+const GET_SCHEDULE_ERROR = "GET_SCHEDULE_ERROR";
 
 // ACTION CREATORS - FUNCTIONS THAT RETURN OBJECT
 const getScheduleLoading = () => ({
-  type: GET_SCHEDULE_LOADING,
+  type: GET_SCHEDULE_LOADING
 });
 
 const getSchedule = data => ({
   type: GET_SCHEDULE_SUCCESS,
-  payload: data,
+  payload: data
 });
 
 const getScheduleError = error => ({
   type: GET_SCHEDULE_ERROR,
-  payload: error,
+  payload: error
 });
 
-export const fetchSchedule = () => (dispatch) => {
+export const fetchSchedule = () => dispatch => {
   dispatch(getScheduleLoading()); // set loading icon before fetching the data
 
   fetch(SCHEDULE_URL)
     .then(res => res.json())
-    .then(data => dispatch(getSchedule(formatSessionData(data))))
+    .then(data => dispatch(getSchedule(data)))
+    // .then(data => dispatch(getSchedule(formatSessionData(data))))
     .catch(err => dispatch(getScheduleError(err)));
 };
 
@@ -35,16 +36,16 @@ export default (
     // initial state
     loading: false,
     data: [],
-    error: '',
+    error: ""
   },
-  action,
+  action
 ) => {
   switch (action.type) {
     case GET_SCHEDULE_LOADING: {
       return {
         ...state,
         loading: true,
-        error: '', // if previously there was an error, clear the error
+        error: "" // if previously there was an error, clear the error
       };
     }
     case GET_SCHEDULE_SUCCESS: {
@@ -52,14 +53,14 @@ export default (
         ...state,
         data: action.payload,
         loading: false,
-        error: '', // if previously there was an error, clear the error
+        error: "" // if previously there was an error, clear the error
       };
     }
     case GET_SCHEDULE_ERROR: {
       return {
         ...state,
         loading: false,
-        error: action.payload, // if previously there was an error, clear the error
+        error: action.payload // if previously there was an error, clear the error
       };
     }
     default:
