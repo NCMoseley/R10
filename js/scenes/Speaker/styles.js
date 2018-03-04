@@ -8,7 +8,7 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   mainContainer: {
-    // marginTop: 25,
+    marginTop: 25,
     paddingRight: 20,
     paddingLeft: 20
   },

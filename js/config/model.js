@@ -2,7 +2,7 @@ import Realm from "realm";
 
 const FaveSchema = {
   name: "Fave",
-  primaryKey: "id",
+  primaryKey: "fave_id",
   properties: {
     fave_id: "string",
     faved_on: "date"

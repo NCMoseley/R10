@@ -1,33 +1,30 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  ScrollView,
-  FlatList,
-  StatusBar,
-} from 'react-native';
+import React from "react";
+import moment from "moment";
+import propTypes from "prop-types";
+import { Text, View } from "react-native";
 
-import { styles } from './styles';
+const Faves = ({ faves, sessionData }) => {
+  // console.log(faves);
+  // console.log(sessionData);
 
-const Faves = ({ data }) => (
-  // StatusBar.setBarStyle('dark-content', true);
-  <View style={styles.mainContainer}>
-    <ScrollView>
-      <FlatList
-        data={data}
-        renderItem={({ item }) => (
-          <View style={styles.container}>
-            <Text style={styles.titlesCodeOfConduct}> +{item.title} </Text>
-            <Text style={styles.description}> +{item.description} </Text>
+  const theseFaves = sessionData.filter(
+    session => faves[session.session_id] === "true"
+  );
+  // console.log(theseFaves.map(fave => fave.location));
+
+  return (
+    <View>
+      {theseFaves.map((fave, index) => {
+        return (
+          <View key={index}>
+            <Text>{moment.unix(fave.start_time).format("LT")}</Text>
+            <Text>{fave.title}</Text>
+            <Text>{fave.location}</Text>
           </View>
-        )}
-        keyExtractor={item => item.title}
-      />
-    </ScrollView>
-  </View>
-);
+        );
+      })}
+    </View>
+  );
+};
+
 export default Faves;

@@ -15,7 +15,7 @@ In Android Studio:
 
 start device simulation first in AVD manager, then:
 
-react-native run-android 
+react-native run-android
 
 ## Git
 
@@ -28,3 +28,7 @@ withredux
 Thank you to Lindsey Woo for constant support and code design inspiration:
 
 https://github.com/science-girl/R10
+
+Thank you to Colin for support and inspiration:
+
+https://github.com/colinmj/R10

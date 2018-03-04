@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import RenderComponent1 from "../../components/render/renderComponent1";
+// import RenderComponent1 from "../../components/render/renderComponent1";
 import moment from "moment";
 import Router from "../../navigation/routes";
 import Store from "../../redux/store";

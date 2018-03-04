@@ -1,48 +1,38 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
-import Faves from "../Faves/Faves";
-import { Text, Image, View } from "react-native";
-import { styles } from "./styles";
+import { connect } from "react-redux";
+// import realm, { queryFaves } from "../../config/model";
+import { fetchFaves } from "../../redux/modules/faves";
+import { formatSessionData } from "../../lib/helpers";
+
+import Faves from "./Faves";
 
 class FavesContainer extends Component {
-  static route = {
-    navigationBar: {
-      title: "Faves",
-      tintColor: "grey"
-    }
-  };
-  constructor() {
-    super();
-    this.state = {
-      data: [],
-      isLoading: true
-    };
+  constructor(props) {
+    super(props);
   }
 
-  componentDidMount() {
-    fetch("https://r10app-95fea.firebaseio.com/cXXXode_of_conduct.json")
-      .then(res => res.json())
-      .then(data => this.setState({ data }))
-      .catch(err =>
-        console.log(`Error fetching AboutContainer rest endpoint: ${err}`)
-      );
-  }
-  componentDidUpdate() {
-    if (this.state.isLoading) {
-      this.setState({ isLoading: false });
+  static route = {
+    navigationBar: {
+      title: "Faves"
     }
+  };
+
+  componentDidMount() {
+    this.props.dispatch(fetchFaves());
   }
 
   render() {
-    if (this.state.isLoading) {
-      return (
-        <View style={styles.loadinggif}>
-          <Image source={require("../../assets/images/loading_blue.gif")} />
-        </View>
-      );
-    }
-    // console.log(this.state.data);
-    return <Faves data={this.state.data} />;
+    // console.log(this.props.faves);
+    // console.log(this.props.sessionData);
+    return (
+      <Faves faves={this.props.faves} sessionData={this.props.sessionData} />
+    );
   }
 }
-export default FavesContainer;
+
+const mapStateToProps = state => ({
+  faves: state.faves.faves,
+  sessionData: state.schedule.sessionData
+});
+
+export default connect(mapStateToProps)(FavesContainer);

@@ -17,11 +17,6 @@ export const goToSpeaker = speakerData => {
   );
 };
 
-// const goToSession = (currentNavigatorUID, data) => {
-//   Store.dispatch(
-//     NavigationActions.push(
-//       currentNavigatorUID,
-//       Router.getRoute("Session", { data })
-//     )
-//   );
-// };
+export const removeSpeaker = () => {
+  Store.dispatch(NavigationActions.pop("root"));
+};
