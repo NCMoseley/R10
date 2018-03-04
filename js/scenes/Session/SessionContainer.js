@@ -4,10 +4,10 @@ import Session from "./Session";
 import { connect } from "react-redux";
 import { Text, Image, View } from "react-native";
 import { styles } from "./styles";
-import { fetchSchedule } from "../../redux/modules/schedule";
 import { fetchSpeaker } from "../../redux/modules/speaker";
 import router from "../../navigation/routes";
 import { formatDataObject } from "../../lib/helpers";
+import { fetchFaves } from "../../redux/modules/faves";
 
 // import { ScrollView, View, Image, Text, ActivityIndicator } from "react-native";
 
@@ -26,7 +26,7 @@ class SessionContainer extends Component {
   };
 
   componentDidMount() {
-    // this.props.dispatch(fetchSchedule());
+    this.props.dispatch(fetchFaves());
     // this.props.dispatch(fetchSpeaker(this.props.route.params.event.speaker));
     let speakerId = this.props.route.params.sessionData.item.speaker;
     // console.log(speakerId);
@@ -55,9 +55,7 @@ class SessionContainer extends Component {
       <Session
         event={this.props.route.params.sessionData}
         speaker={this.state.speaker}
-        // data={this.props.route.params.sessionData}
-        // name={this.state.speaker}
-        // image={this.state.image}
+        faves={this.props.faves}
       />
     );
   }
@@ -66,8 +64,8 @@ class SessionContainer extends Component {
 const mapStateToProps = state => ({
   // convert states into props to pass in react class
   loading: state.speaker.loading,
-  data: state.speaker.data
-  // faves: state.faves.faves
+  data: state.speaker.data,
+  faves: state.faves.faves
 });
 
 SessionContainer.propTypes = {

@@ -20,44 +20,77 @@ import {
 import { goToSpeaker } from "../../lib/navigationHelpers";
 import { styles } from "./styles";
 
-const Session = ({ event, speaker }) => (
-  <View style={styles.mainContainer}>
-    <Text style={styles.description}>
-      {(event.item.description, console.log(event.item.description))}
-    </Text>
-    <Text style={styles.titlesCodeOfConduct}>{event.item.title}</Text>
-    <Text>{moment.unix(event.item.start_time).format("LT")}</Text>
-    <Text style={styles.description}>{event.item.description}</Text>
-    <Text>Presented by: </Text>
+class Session extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      addToFave: true,
+      removeFromFave: false
+    };
 
-    <Image
-      style={{
-        width: 50,
-        height: 50,
-        borderRadius: 50
-      }}
-      source={{ uri: speaker.image }}
-    />
-    {/* <TouchableOpacity onPress={() => goToSpeaker(bio)}> */}
-    <TouchableOpacity onPress={() => goToSpeaker(speaker)}>
-      {/* <Image
-          source={{ uri: speaker.image }}
-          style={{ height: 100, width: 100, borderRadius: 50 }}
-        /> */}
-      <Text>{speaker.name}</Text>
-    </TouchableOpacity>
-    {/* <TouchableHighlight onPress={() => goToSpeaker(console.log(bio))}>
-      <Text>{name}</Text>
-    </TouchableHighlight> */}
-  </View>
-  // <Text> HI </Text>
-);
+    this.renderAddToFave = this.renderAddToFave.bind(this);
+    this.renderRemoveFave = this.renderRemoveFave.bind(this);
+  }
 
-Session.propTypes = {
-  // faves: PropTypes.array.isRequired,
-  // toggleFave: PropTypes.func.isRequired,
-  event: PropTypes.object.isRequired
-  // speaker: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
-};
+  renderAddToFave() {
+    createFave(this.props.event.item.session_id);
+    // console.log(this.props.event.item.session_id);
+    this.setState({
+      addToFave: !this.state.addToFave,
+      removeFromFave: !this.state.addToFave
+    });
+  }
+
+  renderRemoveFave() {
+    deleteFave(this.props.event.item.session_id);
+    this.setState({
+      removeFromFave: !this.state.removeFromFave
+    });
+  }
+
+  render() {
+    const { event, speaker, faves } = this.props;
+    // console.log(this.props.event.item.session_id);
+    return (
+      <View style={styles.mainContainer}>
+        <Text style={styles.titlesCodeOfConduct}>{event.item.title}</Text>
+        <Text>{moment.unix(event.item.start_time).format("LT")}</Text>
+        <Text style={styles.description}>{event.item.description}</Text>
+        <Text>Presented by: </Text>
+        <TouchableOpacity onPress={() => goToSpeaker(speaker)}>
+          <Image
+            style={{
+              width: 50,
+              height: 50,
+              borderRadius: 50
+            }}
+            source={{ uri: speaker.image }}
+          />
+
+          <Text>{speaker.name}</Text>
+        </TouchableOpacity>
+
+        {faves[speaker.session] === undefined && (
+          <TouchableOpacity onPress={this.renderAddToFave}>
+            <Text>Add To Faves</Text>
+          </TouchableOpacity>
+        )}
+
+        {faves[speaker.session] && (
+          <TouchableOpacity onPress={this.renderRemoveFave}>
+            <Text>Remove From Faves</Text>
+          </TouchableOpacity>
+        )}
+      </View>
+    );
+  }
+}
+
+// Session.propTypes = {
+//   faves: PropTypes.array.isRequired,
+//   toggleFave: PropTypes.func.isRequired,
+//   event: PropTypes.object.isRequired,
+//   speaker: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
+// };
 
 export default Session;
