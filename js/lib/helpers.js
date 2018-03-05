@@ -16,3 +16,7 @@ export const formatSessionData = sessions => {
     }, [])
     .sort((a, b) => a.title - b.title);
 };
+
+function filterFaves(faves, data) {
+  return data.filter(event => faves.includes(event.session_id));
+}

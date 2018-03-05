@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 // import RenderComponent1 from "../../components/render/renderComponent1";
 import { createFave, deleteFave } from "../../config/model";
+import { toggleFave } from "../../redux/modules/faves";
 import moment from "moment";
 import {
   Platform,
@@ -15,7 +16,8 @@ import {
   StatusBar,
   SectionList,
   TouchableHighlight,
-  TouchableOpacity
+  TouchableOpacity,
+  Button
 } from "react-native";
 import { goToSpeaker } from "../../lib/navigationHelpers";
 import { styles } from "./styles";
@@ -36,8 +38,8 @@ class Session extends Component {
     createFave(this.props.event.item.session_id);
     // console.log(this.props.event.item.session_id);
     this.setState({
-      addToFave: !this.state.addToFave,
-      removeFromFave: !this.state.addToFave
+      addToFave: !this.state.addToFave
+      // removeFromFave: !this.state.addToFave
     });
   }
 
@@ -49,7 +51,7 @@ class Session extends Component {
   }
 
   render() {
-    const { event, speaker, faves } = this.props;
+    const { event, speaker, faves, toggleFave } = this.props;
     // console.log(this.props.event.item.session_id);
     return (
       <View style={styles.mainContainer}>
@@ -70,21 +72,41 @@ class Session extends Component {
           <Text>{speaker.name}</Text>
         </TouchableOpacity>
 
-        {faves[speaker.session] === undefined && (
+        <TouchableOpacity
+          onPress={() =>
+            toggleFave(event.item.session_id, !faves[event.item.session_id])
+          }
+        >
+          <Text marginTop={15} marginLeft={50} fontSize={15}>
+            {faves[event.item.session_id] ? "Remove Fave" : "Add Fave"}
+          </Text>
+        </TouchableOpacity>
+
+        {/* {faves[speaker.session] === undefined && (
           <TouchableOpacity onPress={this.renderAddToFave}>
             <Text>Add To Faves</Text>
           </TouchableOpacity>
         )}
-
         {faves[speaker.session] && (
           <TouchableOpacity onPress={this.renderRemoveFave}>
             <Text>Remove From Faves</Text>
           </TouchableOpacity>
-        )}
+        )} */}
       </View>
     );
   }
 }
+
+const mapStateToProps = state => ({
+  // convert states into props to pass in react class
+  faves: state.faves.faves
+});
+
+const mapDispatchToProps = dispatch => ({
+  toggleFave: (session_id, onOrOff) => {
+    dispatch(toggleFave(session_id, onOrOff));
+  }
+});
 
 // Session.propTypes = {
 //   faves: PropTypes.array.isRequired,
@@ -93,4 +115,5 @@ class Session extends Component {
 //   speaker: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
 // };
 
-export default Session;
+// export default connect(mapDispatchToProps)(Session);
+export default connect(mapStateToProps, mapDispatchToProps)(Session);

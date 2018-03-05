@@ -5,6 +5,7 @@ import { Text, View, SectionList, TouchableOpacity } from "react-native";
 import { goToSession } from "../../lib/navigationHelpers";
 import { styles } from "./styles";
 import Icon from "react-native-vector-icons/Ionicons";
+import { toggleFave } from "../../redux/modules/faves";
 
 const Faves = ({ faves, data }) => {
   // console.log(faves);
@@ -37,7 +38,12 @@ const Faves = ({ faves, data }) => {
                 name="ios-heart"
                 type="ionicon"
                 color="#f50"
-                onPress={() => console.log("hello")}
+                onPress={() =>
+                  toggleFave(
+                    event.item.session_id,
+                    !faves[event.item.session_id]
+                  )
+                }
               />
             </View>
           </View>
