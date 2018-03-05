@@ -30,7 +30,6 @@ class FavesContainer extends Component {
 
 const mapStateToProps = state => ({
   faves: state.faves.faves,
-  // sessionData: state.schedule.sessionData
   data: state.schedule.data
 });
 

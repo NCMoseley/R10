@@ -34,14 +34,14 @@ export const styles = StyleSheet.create({
     // fontSize: 20,
     fontWeight: "bold",
     // fontStyle: "italic",
-    padding: 10,
-    marginLeft: 5,
+    padding: 5,
+    paddingLeft: 10,
     backgroundColor: "#e6e6e6"
   },
   description: {
     // display: "flex",
     // justifyContent: "space-between",
-    // padding: 10,
+    paddingBottom: 10,
     marginLeft: 15,
     color: "#999999",
     fontFamily: "Montserrat-Light"
