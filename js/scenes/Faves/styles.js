@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from "react-native";
 
 // Medium Grey: #999999
 // Light Grey: #e6e6e6
@@ -10,60 +10,70 @@ export const styles = StyleSheet.create({
   mainContainer: {
     // marginTop: 25,
     paddingRight: 20,
-    paddingLeft: 20,
+    paddingLeft: 20
   },
   container: {
     marginTop: 15,
-    marginBottom: 15,
+    marginBottom: 15
   },
   titleDescription: {
-    marginTop: 15,
-    marginBottom: 15,
-    justifyContent: 'center',
+    fontSize: 15,
+    padding: 10,
+    marginLeft: 5,
+    color: "black",
+    fontFamily: "Montserrat-Light",
+    fontWeight: "bold"
   },
   title: {
     fontSize: 30,
-    fontWeight: 'bold',
-    backgroundColor: '#e6e6e6',
-    fontFamily: 'Montserrat-Light',
+    fontWeight: "bold",
+    backgroundColor: "#e6e6e6",
+    fontFamily: "Montserrat-Light"
   },
   dateTitle: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    fontStyle: 'italic',
-    backgroundColor: 'lightgrey',
-  },
-  titlesCodeOfConduct: {
-    fontSize: 20,
-    color: '#8797D6',
-    // backgroundColor: 'lightblue',
-    fontFamily: 'Montserrat-Regular',
+    // fontSize: 20,
+    fontWeight: "bold",
+    // fontStyle: "italic",
+    padding: 10,
+    marginLeft: 5,
+    backgroundColor: "#e6e6e6"
   },
   description: {
-    color: 'black',
-    fontFamily: 'Montserrat-Light',
+    // display: "flex",
+    // justifyContent: "space-between",
+    // padding: 10,
+    marginLeft: 15,
+    color: "#999999",
+    fontFamily: "Montserrat-Light"
+    // fontWeight: "bold"
+  },
+  descriptionContainer: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between"
   },
   image: {
     width: 200,
     height: 100,
-    marginTop: 10,
+    marginTop: 10
   },
   imageContainer: {
     // borderBottomColor: "grey",
     // borderBottomWidth: 0.5,
     marginTop: 20,
-    alignItems: 'center',
+    alignItems: "center",
     // backgroundColor: '#999999',
-    justifyContent: 'center',
+    justifyContent: "center"
   },
-  loadinggif: {
-    marginTop: 150,
-    alignItems: 'center',
-    justifyContent: 'center',
+  icon: {
+    // position: "absolute",
+    paddingRight: 20
+    // width: 50,
+    // height: 50
   },
   fontMontLight: {
-    fontFamily: 'Montserrat-Light',
-  },
+    fontFamily: "Montserrat-Light"
+  }
 });
 
 // export default styles;

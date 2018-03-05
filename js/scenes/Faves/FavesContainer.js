@@ -24,8 +24,6 @@ class FavesContainer extends Component {
   }
 
   render() {
-    // console.log(this.props.faves);
-    // console.log(this.props.data);
     return <Faves faves={this.props.faves} data={this.props.data} />;
   }
 }

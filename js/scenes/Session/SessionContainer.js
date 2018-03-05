@@ -27,7 +27,6 @@ class SessionContainer extends Component {
 
   componentDidMount() {
     this.props.dispatch(fetchFaves());
-    // this.props.dispatch(fetchSpeaker(this.props.route.params.event.speaker));
     let speakerId = this.props.route.params.sessionData.item.speaker;
     // console.log(speakerId);
     fetch(

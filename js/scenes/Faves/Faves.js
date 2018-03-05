@@ -3,6 +3,8 @@ import moment from "moment";
 import propTypes from "prop-types";
 import { Text, View, SectionList, TouchableOpacity } from "react-native";
 import { goToSession } from "../../lib/navigationHelpers";
+import { styles } from "./styles";
+import Icon from "react-native-vector-icons/Ionicons";
 
 const Faves = ({ faves, data }) => {
   // console.log(faves);
@@ -20,11 +22,24 @@ const Faves = ({ faves, data }) => {
         // console.log(theseFaves);
         return (
           <View key={index}>
+            <Text style={styles.dateTitle}>
+              {moment.unix(fave.start_time).format("LT")}
+            </Text>
             <TouchableOpacity onPress={() => goToSession("Faves", theseFaves)}>
-              <Text>{fave.title}</Text>
+              <Text style={styles.titleDescription}>{fave.title}</Text>
             </TouchableOpacity>
-            <Text>{moment.unix(fave.start_time).format("LT")}</Text>
-            <Text>{fave.location}</Text>
+            <View style={styles.descriptionContainer}>
+              <Text style={styles.description}>{fave.location}</Text>
+              <Icon
+                raised
+                size={15}
+                style={styles.icon}
+                name="ios-heart"
+                type="ionicon"
+                color="#f50"
+                onPress={() => console.log("hello")}
+              />
+            </View>
           </View>
         );
       })}
