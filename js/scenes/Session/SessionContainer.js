@@ -8,6 +8,7 @@ import { fetchSpeaker } from "../../redux/modules/speaker";
 import router from "../../navigation/routes";
 import { formatDataObject } from "../../lib/helpers";
 import { fetchFaves } from "../../redux/modules/faves";
+import HeaderGradient from "../../components/gradients/headerGradient";
 // import { ScrollView, View, Image, Text, ActivityIndicator } from "react-native";
 
 class SessionContainer extends Component {
@@ -20,7 +21,9 @@ class SessionContainer extends Component {
   static route = {
     navigationBar: {
       title: "Session",
-      tintColor: "black"
+      tintColor: "white",
+      titleStyle: { fontFamily: "Montserrat-Regular" },
+      renderBackground: HeaderGradient
     }
   };
 

@@ -6,14 +6,16 @@ import { Text, Image, View } from "react-native";
 import { styles } from "./styles";
 import { fetchSchedule } from "../../redux/modules/schedule";
 import { formatSessionData } from "../../lib/helpers";
-
+import HeaderGradient from "../../components/gradients/headerGradient";
 // import { ScrollView, View, Image, Text, ActivityIndicator } from "react-native";
 
 class ScheduleContainer extends Component {
   static route = {
     navigationBar: {
       title: "Schedule",
-      tintColor: "black"
+      tintColor: "white",
+      titleStyle: { fontFamily: "Montserrat-Regular" },
+      renderBackground: HeaderGradient
     }
   };
 

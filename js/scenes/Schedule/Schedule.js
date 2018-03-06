@@ -23,7 +23,7 @@ import { styles } from "./styles";
 
 const Schedule = ({ data }) => (
   <View style={styles.mainContainer}>
-    {/* <RenderComponent1 data={data} /> */}
+    <StatusBar barStyle="light-content" />
     <SectionList
       sections={data}
       renderItem={({ item }) => (

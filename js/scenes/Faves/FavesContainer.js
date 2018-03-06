@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { fetchFaves } from "../../redux/modules/faves";
 import { popScene } from "../../lib/navigationHelpers";
 import { formatSessionData } from "../../lib/helpers";
+import HeaderGradient from "../../components/gradients/headerGradient";
 
 import Faves from "./Faves";
 
@@ -14,7 +15,10 @@ class FavesContainer extends Component {
 
   static route = {
     navigationBar: {
-      title: "Faves"
+      title: "Faves",
+      tintColor: "white",
+      titleStyle: { fontFamily: "Montserrat-Regular" },
+      renderBackground: HeaderGradient
     }
   };
 

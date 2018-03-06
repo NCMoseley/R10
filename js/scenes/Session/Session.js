@@ -30,6 +30,7 @@ class Session extends Component {
     const { event, speaker, faves, toggleFave } = this.props;
     return (
       <View style={styles.mainContainer}>
+        <StatusBar barStyle="light-content" />
         <Text style={styles.titlesCodeOfConduct}>{event.item.title}</Text>
         <Text>{moment.unix(event.item.start_time).format("LT")}</Text>
         <Text style={styles.description}>{event.item.description}</Text>

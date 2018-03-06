@@ -10,14 +10,13 @@ import {
   FlatList,
   StatusBar
 } from "react-native";
-
 import { styles } from "./styles";
 
 const About = ({ data }) => (
   // StatusBar.setBarStyle('dark-content', true);
 
   <View style={styles.mainContainer}>
-    <StatusBar backgroundColor="blue" barStyle="dark-content" />
+    <StatusBar barStyle="light-content" />
     <ScrollView>
       <View style={styles.imageContainer}>
         <Image

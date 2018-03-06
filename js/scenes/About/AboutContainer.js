@@ -12,6 +12,7 @@ class AboutContainer extends Component {
     navigationBar: {
       title: "About",
       tintColor: "white",
+      titleStyle: { fontFamily: "Montserrat-Regular" },
       renderBackground: HeaderGradient
     }
   };

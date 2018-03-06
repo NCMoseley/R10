@@ -2,7 +2,14 @@ import React from "react";
 import { connect } from "react-redux";
 import moment from "moment";
 import propTypes from "prop-types";
-import { Text, View, SectionList, TouchableOpacity, Image } from "react-native";
+import {
+  Text,
+  View,
+  SectionList,
+  TouchableOpacity,
+  Image,
+  StatusBar
+} from "react-native";
 import { goToSession } from "../../lib/navigationHelpers";
 import { styles } from "./styles";
 import Icon from "react-native-vector-icons/Ionicons";
@@ -17,6 +24,7 @@ class Faves extends React.Component {
 
     return (
       <View>
+        <StatusBar barStyle="light-content" />
         {theseFaves.map((fave, index) => {
           return (
             <View key={index}>
