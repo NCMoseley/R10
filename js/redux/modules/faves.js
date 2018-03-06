@@ -38,7 +38,7 @@ export default (
       };
     }
     case TOGGLE_FAVES: {
-      console.log("toggle fave is running");
+      // console.log("toggle fave is running");
       if (action.onOrOff) createFave(action.session_id);
       else deleteFave(action.session_id);
       const data = queryFaves();

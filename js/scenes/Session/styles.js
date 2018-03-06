@@ -12,6 +12,11 @@ export const styles = StyleSheet.create({
     paddingRight: 20,
     paddingLeft: 20
   },
+  button: {
+    alignItems: "center",
+    backgroundColor: "#999999",
+    padding: 10
+  },
   container: {
     marginTop: 15,
     marginBottom: 15

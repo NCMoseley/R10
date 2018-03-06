@@ -11,19 +11,13 @@ import { toggleFave } from "../../redux/modules/faves";
 class Faves extends React.Component {
   render() {
     const { faves, data } = this.props;
-    // console.log(faves);
-    // console.log(data);
-
     const theseFaves = data.filter(
       session => faves[session.session_id] === "true"
     );
-    console.log(faves);
 
     return (
       <View>
         {theseFaves.map((fave, index) => {
-          console.log(data);
-          // console.log(theseFaves);
           return (
             <View key={index}>
               <Text style={styles.dateTitle}>
@@ -34,7 +28,7 @@ class Faves extends React.Component {
               </TouchableOpacity>
               <View style={styles.descriptionContainer}>
                 <Text style={styles.description}>{fave.location}</Text>
-                {/* {console.log(fave.session_id)} */}
+
                 <Icon
                   raised
                   size={15}
@@ -44,7 +38,6 @@ class Faves extends React.Component {
                   color="#f50"
                   onPress={() => {
                     this.props.toggleFave(fave.session_id, false);
-                    console.log("some shit");
                   }}
                 />
               </View>

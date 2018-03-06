@@ -8,7 +8,6 @@ import { fetchSpeaker } from "../../redux/modules/speaker";
 import router from "../../navigation/routes";
 import { formatDataObject } from "../../lib/helpers";
 import { fetchFaves } from "../../redux/modules/faves";
-
 // import { ScrollView, View, Image, Text, ActivityIndicator } from "react-native";
 
 class SessionContainer extends Component {
@@ -21,14 +20,14 @@ class SessionContainer extends Component {
   static route = {
     navigationBar: {
       title: "Session",
-      tintColor: "grey"
+      tintColor: "black"
     }
   };
 
   componentDidMount() {
     this.props.dispatch(fetchFaves());
     let speakerId = this.props.route.params.sessionData.item.speaker;
-    // console.log(this.props.route.params);
+
     fetch(
       `https://r10app-95fea.firebaseio.com/speakers.json?orderBy="speaker_id"&equalTo="${speakerId}"`
     )
@@ -43,8 +42,6 @@ class SessionContainer extends Component {
 
   render() {
     const { loading, data } = this.props;
-
-    // console.log(this.state.speaker);
 
     return loading ? (
       <View style={styles.loadinggif}>
@@ -61,7 +58,6 @@ class SessionContainer extends Component {
 }
 
 const mapStateToProps = state => ({
-  // convert states into props to pass in react class
   loading: state.speaker.loading,
   data: state.speaker.data,
   faves: state.faves.faves

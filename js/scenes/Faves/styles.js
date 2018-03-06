@@ -16,6 +16,7 @@ export const styles = StyleSheet.create({
     marginTop: 15,
     marginBottom: 15
   },
+
   titleDescription: {
     fontSize: 15,
     padding: 10,

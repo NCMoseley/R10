@@ -5,12 +5,14 @@ import { connect } from "react-redux";
 import { View, Image, Text } from "react-native";
 import { styles } from "./styles";
 import { fetchCodeOfConduct } from "../../redux/modules/about";
+import HeaderGradient from "../../components/gradients/headerGradient";
 
 class AboutContainer extends Component {
   static route = {
     navigationBar: {
       title: "About",
-      tintColor: "grey"
+      tintColor: "white",
+      renderBackground: HeaderGradient
     }
   };
 
