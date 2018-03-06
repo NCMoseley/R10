@@ -8,9 +8,10 @@ import {
   SectionList,
   TouchableOpacity,
   Image,
-  StatusBar
+  StatusBar,
+  Alert
 } from "react-native";
-import { goToSession } from "../../lib/navigationHelpers";
+import { goToSpeaker } from "../../lib/navigationHelpers";
 import { styles } from "./styles";
 import Icon from "react-native-vector-icons/Ionicons";
 import { toggleFave } from "../../redux/modules/faves";
@@ -31,7 +32,11 @@ class Faves extends React.Component {
               <Text style={styles.dateTitle}>
                 {moment.unix(fave.start_time).format("LT")}
               </Text>
-              <TouchableOpacity onPress={() => goToSession("Faves", data)}>
+              <TouchableOpacity
+                onPress={() => {
+                  Alert.alert("You you just had to click it.......");
+                }}
+              >
                 <Text style={styles.titleDescription}>{fave.title}</Text>
               </TouchableOpacity>
               <View style={styles.descriptionContainer}>

@@ -8,9 +8,9 @@ import PropTypes from "prop-types";
 
 const GradientButton = ({ buttonText, marginTop, marginLeft, fontSize }) => (
   <LinearGradient
-    colors={["red", "purple"]}
-    start={{ x: 0.0, y: 0.25 }}
-    end={{ x: 0.5, y: 1.0 }}
+    start={{ y: 0.0, x: 1.0 }}
+    end={{ y: 1.0, x: 0.0 }}
+    colors={["#9963ea", "#cf392a"]}
     style={styles.gradientButton}
   >
     <Text

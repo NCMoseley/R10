@@ -6,7 +6,7 @@ import {
 } from "@expo/ex-navigation";
 import Router from "./../navigation/routes";
 import { colors, typography } from "../config/styles";
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, Alert } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 
 class NavigationLayout extends React.Component {
@@ -65,6 +65,9 @@ class NavigationLayout extends React.Component {
         </DrawerNavigationItem>
         <DrawerNavigationItem
           id="Map"
+          onPress={() => {
+            Alert.alert("Uh, check back later.......");
+          }}
           // selectedStyle={styles.selectedItemStyle}
           renderTitle={isSelected => this.renderTitle(isSelected, "Map")}
           renderIcon={isSelected => this.renderIcon(isSelected, "md-map")}

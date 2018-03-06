@@ -7,7 +7,7 @@ import {
 } from "@expo/ex-navigation";
 import Router from "./../navigation/routes";
 import { colors, typography } from "../config/styles";
-import { Text } from "react-native";
+import { Text, Alert } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
 
 class NavigationLayout extends Component {
@@ -70,6 +70,9 @@ class NavigationLayout extends Component {
           id="Map"
           title="Map"
           renderTitle={this.renderTitle}
+          onPress={() => {
+            Alert.alert("Uh, check back later.......");
+          }}
           renderIcon={isSelected =>
             this.renderIcon(isSelected, "ios-map-outline")
           }

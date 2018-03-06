@@ -17,7 +17,6 @@ import {
   SectionList,
   TouchableHighlight
 } from "react-native";
-// import goToSpeaker from "../../lib/navigationHelpers";
 
 import { styles } from "./styles";
 
@@ -37,7 +36,7 @@ const Speaker = ({ speaker }) => {
       />
       <View style={styles.container}>
         <Text style={styles.title}>{speaker.name}</Text>
-        <Text>Made It</Text>
+        {/* <Text style={styles.title}>Okay you can stop clicking now! </Text> */}
         <Text>{speaker.bio}</Text>
       </View>
       <Text
@@ -48,7 +47,6 @@ const Speaker = ({ speaker }) => {
       </Text>
     </ScrollView>
   );
-  console.log("kkkk");
 };
 
 Speaker.propTypes = {
