@@ -5,11 +5,15 @@ import { connect } from "react-redux";
 import { Text, Image, View } from "react-native";
 import { styles } from "./styles";
 import { fetchSchedule } from "../../redux/modules/schedule";
+import { fetchFaves } from "../../redux/modules/faves";
 import { formatSessionData } from "../../lib/helpers";
 import HeaderGradient from "../../components/gradients/headerGradient";
 // import { ScrollView, View, Image, Text, ActivityIndicator } from "react-native";
 
 class ScheduleContainer extends Component {
+  constructor() {
+    super();
+  }
   static route = {
     navigationBar: {
       title: "Schedule",
@@ -20,28 +24,36 @@ class ScheduleContainer extends Component {
   };
 
   componentDidMount() {
+    this.props.dispatch(fetchFaves());
     this.props.dispatch(fetchSchedule());
   }
 
   render() {
-    const { loading, data } = this.props;
+    const { loading, data, faves } = this.props;
     const formattedData = formatSessionData(data);
-    // console.log(formattedData);
+    console.log(faves);
 
     return loading ? (
       <View style={styles.loadinggif}>
         <Image source={require("../../assets/images/loading_blue.gif")} />
       </View>
     ) : (
-      <Schedule data={formattedData} />
+      <Schedule data={formattedData} faves={faves} />
     );
   }
 }
 
 const mapStateToProps = state => ({
-  // convert states into props to pass in react class
   loading: state.schedule.loading,
-  data: state.schedule.data
+  data: state.schedule.data,
+  faves: state.faves.faves
 });
+
+// ScheduleContainer.propTypes = {
+//   loading: PropTypes.bool.isRequired,
+//   data: PropTypes.array.isRequired,
+//   faves: PropTypes.array.isRequired,
+//   dispatch: PropTypes.func.isRequired
+// };
 
 export default connect(mapStateToProps)(ScheduleContainer);

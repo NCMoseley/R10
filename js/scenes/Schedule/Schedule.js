@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-// import RenderComponent1 from "../../components/render/renderComponent1";
 import moment from "moment";
 import Router from "../../navigation/routes";
 import Store from "../../redux/store";
 import { NavigationActions } from "@expo/ex-navigation";
+import Icon from "react-native-vector-icons/Ionicons";
 import { goToSession } from "../../lib/navigationHelpers";
 import {
   Platform,
@@ -21,7 +21,7 @@ import {
 } from "react-native";
 import { styles } from "./styles";
 
-const Schedule = ({ data }) => (
+const Schedule = ({ data, faves }) => (
   <View style={styles.mainContainer}>
     <StatusBar barStyle="light-content" />
     <SectionList
@@ -31,6 +31,16 @@ const Schedule = ({ data }) => (
           <View style={styles.container}>
             <Text>{item.title}</Text>
             <Text style={styles.location}>{item.location}</Text>
+            {!!Object.keys(faves).includes(item.session_id) && (
+              <Icon
+                raised
+                size={15}
+                style={styles.icon}
+                name="ios-heart"
+                type="ionicon"
+                color="#f50"
+              />
+            )}
           </View>
         </TouchableHighlight>
       )}
