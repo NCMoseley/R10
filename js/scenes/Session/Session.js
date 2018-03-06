@@ -34,6 +34,7 @@ class Session extends Component {
         <Text style={styles.titlesCodeOfConduct}>{event.item.title}</Text>
         <Text>{moment.unix(event.item.start_time).format("LT")}</Text>
         <Text style={styles.description}>{event.item.description}</Text>
+
         {speaker && (
           <View>
             <Text>Presented by: </Text>
