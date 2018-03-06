@@ -34,24 +34,22 @@ class Session extends Component {
         <Text style={styles.titlesCodeOfConduct}>{event.item.title}</Text>
         <Text>{moment.unix(event.item.start_time).format("LT")}</Text>
         <Text style={styles.description}>{event.item.description}</Text>
-
-        {/* {speaker && (NOTE */}
-        <View>
-          <Text>Presented by: </Text>
-          <TouchableOpacity onPress={() => goToSpeaker(speaker)}>
-            <Image
-              style={{
-                width: 50,
-                height: 50,
-                borderRadius: 25
-              }}
-              source={{ uri: speaker.image }}
-            />
-            <Text>{speaker.name}</Text>
-          </TouchableOpacity>
-        </View>
-        {/* )} */}
-
+        {speaker && (
+          <View>
+            <Text>Presented by: </Text>
+            <TouchableOpacity onPress={() => goToSpeaker(speaker)}>
+              <Image
+                style={{
+                  width: 50,
+                  height: 50,
+                  borderRadius: 25
+                }}
+                source={{ uri: speaker.image }}
+              />
+              <Text>{speaker.name}</Text>
+            </TouchableOpacity>
+          </View>
+        )}
         <TouchableOpacity
           onPress={() =>
             toggleFave(
@@ -60,12 +58,7 @@ class Session extends Component {
             )
           }
         >
-          <Text marginTop={15} marginLeft={50} fontSize={15}>
-            {!!Object.keys(faves).includes(event.item.session_id)
-              ? "Remove Fave"
-              : "Add Fave"}
-          </Text>
-          {/* <GradientButton NOTE
+          <GradientButton
             marginTop={15}
             marginLeft={50}
             fontSize={15}
@@ -74,7 +67,7 @@ class Session extends Component {
                 ? "Remove Fave"
                 : "Add Fave"
             }
-          /> */}
+          />
         </TouchableOpacity>
       </View>
     );

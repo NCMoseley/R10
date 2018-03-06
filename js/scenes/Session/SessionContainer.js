@@ -56,6 +56,7 @@ class SessionContainer extends Component {
         speaker={this.state.speaker}
         faves={this.props.faves}
       />
+      // <Text>Test</Text>
     );
   }
 }

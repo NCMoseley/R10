@@ -25,6 +25,7 @@ export const fetchFaves = () => dispatch => {
 export default (
   state = {
     loading: false,
+    // NOTE 
     faves: {},
     error: ""
   },
