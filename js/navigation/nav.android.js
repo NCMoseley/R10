@@ -63,6 +63,18 @@ class NavigationLayout extends React.Component {
             initialRoute={Router.getRoute("Faves")}
           />
         </DrawerNavigationItem>
+        <DrawerNavigationItem
+          id="Map"
+          // selectedStyle={styles.selectedItemStyle}
+          renderTitle={isSelected => this.renderTitle(isSelected, "Map")}
+          renderIcon={isSelected => this.renderIcon(isSelected, "md-map")}
+        >
+          <StackNavigation
+            id="Map"
+            navigatorUID="Map"
+            initialRoute={Router.getRoute("About")}
+          />
+        </DrawerNavigationItem>
       </DrawerNavigation>
     );
   }

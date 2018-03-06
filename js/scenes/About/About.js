@@ -13,8 +13,6 @@ import {
 import { styles } from "./styles";
 
 const About = ({ data }) => (
-  // StatusBar.setBarStyle('dark-content', true);
-
   <View style={styles.mainContainer}>
     <StatusBar barStyle="light-content" />
     <ScrollView>
@@ -34,7 +32,7 @@ const About = ({ data }) => (
       </View>
 
       <View style={styles.container}>
-        <Text style={styles.dateTitle}> Date and Venue: </Text>
+        <Text style={styles.dateTitle}> Date & Venue: </Text>
       </View>
 
       <View style={styles.container}>

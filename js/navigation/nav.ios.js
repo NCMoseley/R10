@@ -66,6 +66,20 @@ class NavigationLayout extends Component {
             initialRoute={Router.getRoute("Faves")}
           />
         </TabItem>
+        <TabItem
+          id="Map"
+          title="Map"
+          renderTitle={this.renderTitle}
+          renderIcon={isSelected =>
+            this.renderIcon(isSelected, "ios-map-outline")
+          }
+        >
+          <StackNavigation
+            id="Map"
+            navigatorUID="Map"
+            initialRoute={Router.getRoute("About")}
+          />
+        </TabItem>
       </TabNavigation>
     );
   }
