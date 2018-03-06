@@ -25,30 +25,30 @@ import { styles } from "./styles";
 class Session extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      addToFave: true,
-      removeFromFave: false
-    };
+    // this.state = {
+    //   addToFave: true,
+    //   removeFromFave: false
+    // };
 
-    this.renderAddToFave = this.renderAddToFave.bind(this);
-    this.renderRemoveFave = this.renderRemoveFave.bind(this);
+    // this.renderAddToFave = this.renderAddToFave.bind(this);
+    // this.renderRemoveFave = this.renderRemoveFave.bind(this);
   }
 
-  renderAddToFave() {
-    createFave(this.props.event.item.session_id);
-    // console.log(this.props.event.item.session_id);
-    this.setState({
-      addToFave: !this.state.addToFave
-      // removeFromFave: !this.state.addToFave
-    });
-  }
+  // renderAddToFave() {
+  //   createFave(this.props.event.item.session_id);
+  //   // console.log(this.props.event.item.session_id);
+  //   this.setState({
+  //     addToFave: !this.state.addToFave
+  //     // removeFromFave: !this.state.addToFave
+  //   });
+  // }
 
-  renderRemoveFave() {
-    deleteFave(this.props.event.item.session_id);
-    this.setState({
-      removeFromFave: !this.state.removeFromFave
-    });
-  }
+  // renderRemoveFave() {
+  //   deleteFave(this.props.event.item.session_id);
+  //   this.setState({
+  //     removeFromFave: !this.state.removeFromFave
+  //   });
+  // }
 
   render() {
     const { event, speaker, faves, toggleFave } = this.props;
@@ -64,21 +64,25 @@ class Session extends Component {
             style={{
               width: 50,
               height: 50,
-              borderRadius: 50
+              borderRadius: 25
             }}
             source={{ uri: speaker.image }}
           />
-
           <Text>{speaker.name}</Text>
         </TouchableOpacity>
-
+        {console.log("this is whata we are looking for", faves)}
         <TouchableOpacity
           onPress={() =>
-            toggleFave(event.item.session_id, !faves[event.item.session_id])
+            toggleFave(
+              event.item.session_id,
+              !Object.keys(faves).includes(event.item.session_id)
+            )
           }
         >
           <Text marginTop={15} marginLeft={50} fontSize={15}>
-            {faves[event.item.session_id] ? "Remove Fave" : "Add Fave"}
+            {!!Object.keys(faves).includes(event.item.session_id)
+              ? "Remove Fave"
+              : "Add Fave"}
           </Text>
         </TouchableOpacity>
 
@@ -108,12 +112,12 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-// Session.propTypes = {
-//   faves: PropTypes.array.isRequired,
-//   toggleFave: PropTypes.func.isRequired,
-//   event: PropTypes.object.isRequired,
-//   speaker: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
-// };
+Session.propTypes = {
+  faves: PropTypes.object.isRequired,
+  toggleFave: PropTypes.func.isRequired,
+  event: PropTypes.object.isRequired
+  // speaker: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
+};
 
 // export default connect(mapDispatchToProps)(Session);
 export default connect(mapStateToProps, mapDispatchToProps)(Session);

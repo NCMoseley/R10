@@ -27,6 +27,14 @@ const Speaker = ({ speaker }) => {
       <TouchableHighlight onPress={() => removeSpeaker()}>
         <Icon active name="ios-close" color="black" size={40} />
       </TouchableHighlight>
+      <Image
+        style={{
+          width: 150,
+          height: 150,
+          borderRadius: 75
+        }}
+        source={{ uri: speaker.image }}
+      />
       <View style={styles.container}>
         <Text style={styles.title}>{speaker.name}</Text>
         <Text>Made It</Text>

@@ -28,7 +28,7 @@ class SessionContainer extends Component {
   componentDidMount() {
     this.props.dispatch(fetchFaves());
     let speakerId = this.props.route.params.sessionData.item.speaker;
-    // console.log(speakerId);
+    // console.log(this.props.route.params);
     fetch(
       `https://r10app-95fea.firebaseio.com/speakers.json?orderBy="speaker_id"&equalTo="${speakerId}"`
     )
@@ -68,11 +68,11 @@ const mapStateToProps = state => ({
 });
 
 SessionContainer.propTypes = {
-  loading: PropTypes.bool.isRequired,
-  data: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  // faves: PropTypes.array.isRequired,
-  dispatch: PropTypes.func.isRequired,
-  route: PropTypes.object.isRequired
+  // loading: PropTypes.bool.isRequired,
+  // data: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  faves: PropTypes.object.isRequired
+  // dispatch: PropTypes.func.isRequired,
+  // route: PropTypes.object.isRequired
 };
 
 export default connect(mapStateToProps)(SessionContainer);

@@ -25,7 +25,7 @@ export const fetchFaves = () => dispatch => {
 export default (
   state = {
     loading: false,
-    faves: [],
+    faves: {},
     error: ""
   },
   action
@@ -38,9 +38,12 @@ export default (
       };
     }
     case TOGGLE_FAVES: {
+      console.log("toggle fave is running");
       if (action.onOrOff) createFave(action.session_id);
       else deleteFave(action.session_id);
-      const faves = queryFaves();
+      const data = queryFaves();
+      const faves = {};
+      data.map((item, key) => (faves[item.id] = "true"));
       return { ...state, loading: false, faves, error: "" };
     }
     default:
