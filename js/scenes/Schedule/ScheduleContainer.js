@@ -31,7 +31,6 @@ class ScheduleContainer extends Component {
   render() {
     const { loading, data, faves } = this.props;
     const formattedData = formatSessionData(data);
-    console.log(faves);
 
     return loading ? (
       <View style={styles.loadinggif}>

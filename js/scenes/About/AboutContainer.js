@@ -6,6 +6,7 @@ import { View, Image, Text, ScrollView } from "react-native";
 import { styles } from "./styles";
 import { fetchCodeOfConduct } from "../../redux/modules/about";
 import HeaderGradient from "../../components/gradients/headerGradient";
+import { Footer } from "../../components/footer/footer";
 import Accordian from "../../components/accordian/accordian";
 
 // Thank you Lindsey for below
@@ -70,6 +71,7 @@ class AboutContainer extends Component {
             />
           );
         })}
+        <Footer />
       </ScrollView>
     );
   }
@@ -93,39 +95,3 @@ AboutContainer.defaultProps = {
 };
 
 export default connect(mapStateToProps)(AboutContainer);
-
-// class AboutContainer extends Component {
-//   static route = {
-//     navigationBar: {
-//       title: "About",
-//       tintColor: "white",
-//       titleStyle: { fontFamily: "Montserrat-Regular" },
-//       renderBackground: HeaderGradient
-//     }
-//   };
-
-//   componentDidMount() {
-//     this.props.dispatch(fetchCodeOfConduct());
-//   }
-
-//   render() {
-//     const { loading, data } = this.props;
-//     if (loading) {
-//       return (
-//         <View style={styles.loadinggif}>
-//           <Image source={require("../../assets/images/loading_blue.gif")} />
-//         </View>
-//       );
-//     }
-//     // console.log(data);
-//     return <About data={data} />;
-//   }
-// }
-
-// const mapStateToProps = state => ({
-//   // convert states into props to pass in react class
-//   loading: state.about.loading,
-//   data: state.about.data
-// });
-
-// export default connect(mapStateToProps)(AboutContainer);

@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from "react-native";
 
 // Medium Grey: #999999
 // Light Grey: #e6e6e6
@@ -10,60 +10,71 @@ export const styles = StyleSheet.create({
   mainContainer: {
     // marginTop: 25,
     paddingRight: 20,
-    paddingLeft: 20,
+    paddingLeft: 20
   },
   container: {
     marginTop: 15,
-    marginBottom: 15,
+    marginBottom: 15
   },
   titleDescription: {
     marginTop: 15,
     marginBottom: 15,
-    justifyContent: 'center',
+    justifyContent: "center"
   },
   title: {
     fontSize: 30,
-    fontWeight: 'bold',
-    backgroundColor: '#e6e6e6',
-    fontFamily: 'Montserrat-Light',
+    fontWeight: "bold",
+    backgroundColor: "#e6e6e6",
+    fontFamily: "Montserrat-Light"
   },
   dateTitle: {
     fontSize: 20,
-    fontWeight: 'bold',
-    fontStyle: 'italic',
-    backgroundColor: 'lightgrey',
+    fontWeight: "bold",
+    fontStyle: "italic",
+    backgroundColor: "lightgrey"
   },
   titlesCodeOfConduct: {
     fontSize: 20,
-    color: '#8797D6',
+    color: "#8797D6",
     // backgroundColor: 'lightblue',
-    fontFamily: 'Montserrat-Regular',
+    fontFamily: "Montserrat-Regular"
   },
   description: {
-    color: 'black',
-    fontFamily: 'Montserrat-Light',
+    color: "black",
+    fontFamily: "Montserrat-Light"
+  },
+  descriptionContainer: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between"
   },
   image: {
     width: 200,
     height: 100,
-    marginTop: 10,
+    marginTop: 10
   },
   imageContainer: {
     // borderBottomColor: "grey",
     // borderBottomWidth: 0.5,
     marginTop: 20,
-    alignItems: 'center',
+    alignItems: "center",
     // backgroundColor: '#999999',
-    justifyContent: 'center',
+    justifyContent: "center"
+  },
+  icon: {
+    // position: "absolute",
+    paddingRight: 20
+    // width: 50,
+    // height: 50
   },
   loadinggif: {
     marginTop: 150,
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center"
   },
   fontMontLight: {
-    fontFamily: 'Montserrat-Light',
-  },
+    fontFamily: "Montserrat-Light"
+  }
 });
 
 // export default styles;

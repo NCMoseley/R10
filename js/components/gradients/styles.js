@@ -4,7 +4,7 @@ export const styles = StyleSheet.create({
   gradientButton: {
     // flex: 1,
     borderRadius: 25,
-    width: 200,
+    width: 230,
     height: 50
     //marginLeft: 40
   },

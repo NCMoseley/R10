@@ -34,17 +34,12 @@ class Session extends Component {
         <Text style={styles.titlesCodeOfConduct}>{event.item.title}</Text>
         <Text>{moment.unix(event.item.start_time).format("LT")}</Text>
         <Text style={styles.description}>{event.item.description}</Text>
-
         {speaker && (
           <View>
-            <Text>Presented by: </Text>
+            <Text>Presented by:</Text>
             <TouchableOpacity onPress={() => goToSpeaker(speaker)}>
               <Image
-                style={{
-                  width: 50,
-                  height: 50,
-                  borderRadius: 25
-                }}
+                style={{ width: 50, height: 50, borderRadius: 25 }}
                 source={{ uri: speaker.image }}
               />
               <Text>{speaker.name}</Text>
@@ -65,8 +60,8 @@ class Session extends Component {
             fontSize={15}
             buttonText={
               !!Object.keys(faves).includes(event.item.session_id)
-                ? "Remove Fave"
-                : "Add Fave"
+                ? "Remove Favorites"
+                : "Add Favorites"
             }
           />
         </TouchableOpacity>

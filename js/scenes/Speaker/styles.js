@@ -21,6 +21,11 @@ export const styles = StyleSheet.create({
     marginBottom: 15,
     justifyContent: "center"
   },
+  background: {
+    backgroundColor: "black",
+    height: 1000,
+    padding: 8
+  },
   title: {
     fontSize: 30,
     fontWeight: "bold",

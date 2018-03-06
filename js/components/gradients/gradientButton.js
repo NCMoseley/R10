@@ -7,27 +7,25 @@ import PropTypes from "prop-types";
 // This is Lindseys button
 
 const GradientButton = ({ buttonText, marginTop, marginLeft, fontSize }) => (
-  <View style={{ flex: 1 }}>
-    <LinearGradient
-      start={{ y: 0.0, x: 1.0 }}
-      end={{ y: 1.0, x: 0.0 }}
-      colors={["#9963ea", "#cf392a"]}
-      style={styles.gradientButton}
+  <LinearGradient
+    start={{ y: 0.0, x: 1.0 }}
+    end={{ y: 1.0, x: 0.0 }}
+    colors={["#9963ea", "#8797D6"]}
+    style={styles.gradientButton}
+  >
+    <Text
+      style={[
+        styles.buttonText,
+        {
+          marginLeft: marginLeft,
+          marginTop: marginTop,
+          fontSize: fontSize
+        }
+      ]}
     >
-      <Text
-        style={[
-          styles.buttonText,
-          {
-            marginLeft: marginLeft,
-            marginTop: marginTop,
-            fontSize: fontSize
-          }
-        ]}
-      >
-        {buttonText}
-      </Text>
-    </LinearGradient>
-  </View>
+      {buttonText}
+    </Text>
+  </LinearGradient>
 );
 
 GradientButton.propTypes = {
