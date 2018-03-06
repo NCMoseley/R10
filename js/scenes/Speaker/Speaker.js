@@ -26,17 +26,18 @@ const Speaker = ({ speaker }) => {
       <TouchableHighlight onPress={() => removeSpeaker()}>
         <Icon active name="ios-close" color="black" size={40} />
       </TouchableHighlight>
-      <Image
-        style={{
-          width: 150,
-          height: 150,
-          borderRadius: 75
-        }}
-        source={{ uri: speaker.image }}
-      />
+      <View style={styles.imageContainer}>
+        <Image
+          style={{
+            width: 150,
+            height: 150,
+            borderRadius: 75
+          }}
+          source={{ uri: speaker.image }}
+        />
+      </View>
       <View style={styles.container}>
         <Text style={styles.title}>{speaker.name}</Text>
-        {/* <Text style={styles.title}>Okay you can stop clicking now! </Text> */}
         <Text>{speaker.bio}</Text>
       </View>
       <Text

@@ -71,7 +71,7 @@ class NavigationLayout extends Component {
           title="Map"
           renderTitle={this.renderTitle}
           onPress={() => {
-            Alert.alert("Uh, check back later.......");
+            Alert.alert("Check back later.......");
           }}
           renderIcon={isSelected =>
             this.renderIcon(isSelected, "ios-map-outline")

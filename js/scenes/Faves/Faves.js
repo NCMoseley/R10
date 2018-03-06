@@ -41,7 +41,6 @@ class Faves extends React.Component {
               </TouchableOpacity>
               <View style={styles.descriptionContainer}>
                 <Text style={styles.description}>{fave.location}</Text>
-
                 <Icon
                   raised
                   size={15}
