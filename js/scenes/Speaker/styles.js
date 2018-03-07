@@ -8,24 +8,28 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   mainContainer: {
-    marginTop: 25,
-    // justifyContent: "center",
-    // alignItems: "center",
-    // paddingRight: 20,
-    // paddingLeft: 20,
     padding: 8,
     backgroundColor: "white",
-    // justifyContent: "center",
-    // alignItems: "center",
+    height: 1000,
     borderRadius: 6
   },
+  button: {
+    alignSelf: "center",
+    padding: 20
+  },
   containerHeader: {
-    // justifyContent: "center",
-    alignItems: "center",
+    paddingTop: 95,
+    // alignItems: "center",
     flexDirection: "row",
-    justifyContent: "space-between"
-    // paddingTop: 20,
-    // paddingBottom: 10
+    justifyContent: "center"
+  },
+  about: {
+    paddingLeft: 60,
+    paddingRight: 60,
+    fontSize: 17,
+    fontWeight: "bold",
+    color: "white",
+    alignSelf: "center"
   },
   container: {
     marginTop: 15,
@@ -45,10 +49,11 @@ export const styles = StyleSheet.create({
     paddingTop: 20
   },
   title: {
+    alignSelf: "center",
     fontSize: 30,
     fontWeight: "bold",
-    // backgroundColor: "#e6e6e6",
-    fontFamily: "Montserrat-Light"
+    fontFamily: "Montserrat-Light",
+    paddingBottom: 20
   },
   dateTitle: {
     fontSize: 20,
@@ -56,37 +61,20 @@ export const styles = StyleSheet.create({
     fontStyle: "italic",
     backgroundColor: "lightgrey"
   },
-  titlesCodeOfConduct: {
-    fontSize: 20,
-    color: "#8797D6",
-    // backgroundColor: 'lightblue',
-    fontFamily: "Montserrat-Regular"
-  },
-  description: {
-    color: "black",
-    fontFamily: "Montserrat-Light"
-  },
-  image: {
-    width: 200,
-    height: 100,
-    marginTop: 10
+  bio: {
+    fontSize: 17,
+    lineHeight: 24,
+    fontFamily: "Montserrat-Light",
+    paddingLeft: 10,
+    paddingRight: 10
   },
   imageContainer: {
-    // borderBottomColor: "grey",
-    // borderBottomWidth: 0.5,
     marginTop: 20,
-    alignItems: "center",
-    // backgroundColor: '#999999',
-    justifyContent: "center"
+    alignItems: "center"
   },
   loadinggif: {
     marginTop: 150,
     alignItems: "center",
     justifyContent: "center"
-  },
-  fontMontLight: {
-    fontFamily: "Montserrat-Light"
   }
 });
-
-// export default styles;

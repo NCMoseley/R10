@@ -22,7 +22,6 @@ export const styles = StyleSheet.create({
   location: {
     color: "#999999",
     fontSize: 15
-    // fontFamily: "Montserrat-Regular"
   },
   title: {
     paddingLeft: 10,
