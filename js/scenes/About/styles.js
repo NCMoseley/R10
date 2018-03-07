@@ -8,7 +8,6 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   mainContainer: {
-    // marginTop: 25,
     paddingRight: 20,
     paddingLeft: 20
   },
@@ -24,18 +23,15 @@ export const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: "bold",
-    // backgroundColor: "#e6e6e6",
     fontFamily: "Montserrat-Regular"
   },
   dateTitle: {
     fontSize: 24,
     fontWeight: "bold"
-    // backgroundColor: "lightgrey"
   },
   titlesCodeOfConduct: {
     fontSize: 20,
     color: "#8797D6",
-    // backgroundColor: 'lightblue',
     fontFamily: "Montserrat-Regular"
   },
   description: {
@@ -51,17 +47,11 @@ export const styles = StyleSheet.create({
     borderBottomWidth: 1.5,
     marginTop: 10,
     alignItems: "center",
-    // backgroundColor: '#999999',
     justifyContent: "center"
   },
   loadinggif: {
     marginTop: 150,
     alignItems: "center",
     justifyContent: "center"
-  },
-  fontMontLight: {
-    fontFamily: "Montserrat-Light"
   }
 });
-
-// export default styles;
