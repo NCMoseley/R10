@@ -2,7 +2,9 @@
 
 React Native App with the express purpose of blowing peoples minds
 
-![Alt Text](https://github.com/NCMoseley/R10/blob/master/All%20tests%20Suite%201.gif)
+![Alt Text](https://github.com/NCMoseley/R10/blob/master/js/assets/images/AboutScreen.gif)
+![Alt Text](https://github.com/NCMoseley/R10/blob/master/js/assets/images/Schedule.gif)
+![Alt Text](https://github.com/NCMoseley/R10/blob/master/js/assets/images/Session.gif)
 
 ## Setup
 
@@ -13,6 +15,9 @@ npm install.
 then run:
 
 react-native run-ios
+
+![Alt Text](https://github.com/NCMoseley/R10/blob/master/js/assets/images/Session2.gif)
+![Alt Text](https://github.com/NCMoseley/R10/blob/master/js/assets/images/Faves.gif)
 
 ## Dev Setup
 
