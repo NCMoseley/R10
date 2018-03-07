@@ -5,6 +5,7 @@ import { createFave, deleteFave } from "../../config/model";
 import { toggleFave } from "../../redux/modules/faves";
 import GradientButton from "../../components/gradients/gradientButton";
 import moment from "moment";
+import Icon from "react-native-vector-icons/Ionicons";
 import {
   Platform,
   StyleSheet,
@@ -29,24 +30,57 @@ class Session extends Component {
   render() {
     const { event, speaker, faves, toggleFave } = this.props;
     return (
-      <View style={styles.mainContainer}>
+      <ScrollView style={styles.mainContainer}>
         <StatusBar barStyle="light-content" />
+        <View style={styles.locationHeart}>
+          <Text style={styles.location}>{event.item.location}</Text>
+          {!!Object.keys(faves).includes(event.item.session_id) ? (
+            <Icon
+              onPress={() =>
+                toggleFave(
+                  event.item.session_id,
+                  !Object.keys(faves).includes(event.item.session_id)
+                )
+              }
+              name="ios-heart"
+              color="red"
+              size={20}
+            />
+          ) : (
+            <Icon
+              onPress={() =>
+                toggleFave(
+                  event.item.session_id,
+                  !Object.keys(faves).includes(event.item.session_id)
+                )
+              }
+              name="ios-heart"
+              color="grey"
+              size={20}
+            />
+          )}
+        </View>
         <Text style={styles.titlesCodeOfConduct}>{event.item.title}</Text>
-        <Text>{moment.unix(event.item.start_time).format("LT")}</Text>
+        <Text style={styles.dateTitle}>
+          {moment.unix(event.item.start_time).format("LT")}
+        </Text>
         <Text style={styles.description}>{event.item.description}</Text>
-        {speaker && (
-          <View>
-            <Text>Presented by:</Text>
+        {speaker ? (
+          <View style={styles.speakerBox}>
+            <Text style={styles.presented}>Presented by:</Text>
             <TouchableOpacity onPress={() => goToSpeaker(speaker)}>
-              <Image
-                style={{ width: 50, height: 50, borderRadius: 25 }}
-                source={{ uri: speaker.image }}
-              />
-              <Text>{speaker.name}</Text>
+              <View style={styles.speaker}>
+                <Image
+                  style={{ width: 50, height: 50, borderRadius: 25 }}
+                  source={{ uri: speaker.image }}
+                />
+                <Text style={styles.speakerName}>{speaker.name}</Text>
+              </View>
             </TouchableOpacity>
           </View>
-        )}
+        ) : null}
         <TouchableOpacity
+          style={styles.button}
           onPress={() =>
             toggleFave(
               event.item.session_id,
@@ -65,7 +99,7 @@ class Session extends Component {
             }
           />
         </TouchableOpacity>
-      </View>
+      </ScrollView>
     );
   }
 }

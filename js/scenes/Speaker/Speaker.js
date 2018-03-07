@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-// import RenderComponent1 from "../../components/render/renderComponent1";
 import Icon from "react-native-vector-icons/Ionicons";
 import { removeSpeaker } from "../../lib/navigationHelpers";
+import GradientButton from "../../components/gradients/gradientButton";
 import moment from "moment";
 import {
   Platform,
@@ -15,18 +15,28 @@ import {
   FlatList,
   StatusBar,
   SectionList,
-  TouchableHighlight
+  TouchableHighlight,
+  Linking
 } from "react-native";
 
 import { styles } from "./styles";
 
 const Speaker = ({ speaker }) => {
   return (
-    <View style={styles.backgroud}>
+    <View style={styles.background}>
+      <View style={styles.containerHeader}>
+        <Icon
+          active
+          style={{ padding: 20 }}
+          name="ios-close"
+          color="white"
+          size={40}
+          onPress={() => removeSpeaker()}
+        />
+        <Text style={{ color: "white" }}>About the Speaker</Text>
+      </View>
+
       <ScrollView style={styles.mainContainer}>
-        <TouchableHighlight onPress={() => removeSpeaker()}>
-          <Icon active name="ios-close" color="black" size={40} />
-        </TouchableHighlight>
         <View style={styles.imageContainer}>
           <Image
             style={{
@@ -41,12 +51,13 @@ const Speaker = ({ speaker }) => {
           <Text style={styles.title}>{speaker.name}</Text>
           <Text>{speaker.bio}</Text>
         </View>
-        <Text
-          style={{ color: "blue" }}
-          onPress={() => Linking.openURL(speaker.url)}
-        >
-          Read More on Wikipedia
-        </Text>
+        <TouchableHighlight onPress={() => Linking.openURL(`${speaker.url}`)}>
+          <GradientButton
+            marginTop={15}
+            marginLeft={15}
+            buttonText={"Read More on Wikipedia"}
+          />
+        </TouchableHighlight>
       </ScrollView>
     </View>
   );

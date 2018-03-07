@@ -9,8 +9,23 @@ import { StyleSheet } from "react-native";
 export const styles = StyleSheet.create({
   mainContainer: {
     marginTop: 25,
-    paddingRight: 20,
-    paddingLeft: 20
+    // justifyContent: "center",
+    // alignItems: "center",
+    // paddingRight: 20,
+    // paddingLeft: 20,
+    padding: 8,
+    backgroundColor: "white",
+    // justifyContent: "center",
+    // alignItems: "center",
+    borderRadius: 6
+  },
+  containerHeader: {
+    // justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "space-between"
+    // paddingTop: 20,
+    // paddingBottom: 10
   },
   container: {
     marginTop: 15,
@@ -22,14 +37,17 @@ export const styles = StyleSheet.create({
     justifyContent: "center"
   },
   background: {
+    justifyContent: "center",
+    alignItems: "center",
     backgroundColor: "black",
     height: 1000,
-    padding: 8
+    padding: 8,
+    paddingTop: 20
   },
   title: {
     fontSize: 30,
     fontWeight: "bold",
-    backgroundColor: "#e6e6e6",
+    // backgroundColor: "#e6e6e6",
     fontFamily: "Montserrat-Light"
   },
   dateTitle: {

@@ -8,23 +8,28 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   mainContainer: {
-    // marginTop: 25,
-    paddingRight: 20,
-    paddingLeft: 20
+    padding: 20
+  },
+  locationHeart: {
+    flexDirection: "row",
+    justifyContent: "space-between"
+  },
+  location: {
+    color: "#999999",
+    fontSize: 15,
+    fontFamily: "Montserrat-Regular"
   },
   button: {
-    alignItems: "center",
-    backgroundColor: "#999999",
-    padding: 10
+    alignSelf: "center",
+    padding: 20
   },
   container: {
     marginTop: 15,
     marginBottom: 15
   },
-  titleDescription: {
-    marginTop: 15,
-    marginBottom: 15,
-    justifyContent: "center"
+  description: {
+    paddingTop: 15,
+    paddingBottom: 15
   },
   title: {
     fontSize: 30,
@@ -33,34 +38,50 @@ export const styles = StyleSheet.create({
     fontFamily: "Montserrat-Light"
   },
   dateTitle: {
-    fontSize: 20,
-    fontWeight: "bold",
-    fontStyle: "italic",
-    backgroundColor: "lightgrey"
+    paddingTop: 15,
+    fontSize: 15,
+    color: "#cf392a"
   },
   titlesCodeOfConduct: {
+    paddingTop: 15,
     fontSize: 20,
-    color: "#8797D6",
-    // backgroundColor: 'lightblue',
     fontFamily: "Montserrat-Regular"
   },
   description: {
-    color: "black",
+    paddingTop: 15,
     fontFamily: "Montserrat-Light"
   },
-  image: {
-    width: 200,
-    height: 100,
-    marginTop: 10
+  presented: {
+    paddingTop: 15,
+    color: "#999999"
   },
-  imageContainer: {
-    // borderBottomColor: "grey",
-    // borderBottomWidth: 0.5,
-    marginTop: 20,
-    alignItems: "center",
-    // backgroundColor: '#999999',
-    justifyContent: "center"
+  speaker: {
+    paddingTop: 15,
+    flexDirection: "row",
+    justifyContent: "flex-start"
   },
+  speakerBox: {
+    padding: 20,
+    borderBottomWidth: 1.5,
+    borderBottomColor: "#e6e6e6"
+  },
+  speakerName: {
+    padding: 20
+  },
+  // image: {
+  //   width: 200,
+  //   height: 100,
+  //   paddingTop: 15,
+  //   paddingBottom: 15
+  // },
+  // imageContainer: {
+  //   borderBottomColor: "grey",
+  //   borderBottomWidth: 0.5,
+  //   marginTop: 20,
+  //   alignItems: "center",
+  //   backgroundColor: '#999999',
+  //   justifyContent: "center"
+  // },
   loadinggif: {
     marginTop: 150,
     alignItems: "center",
