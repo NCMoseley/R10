@@ -68,28 +68,9 @@ export const styles = StyleSheet.create({
   speakerName: {
     padding: 20
   },
-  // image: {
-  //   width: 200,
-  //   height: 100,
-  //   paddingTop: 15,
-  //   paddingBottom: 15
-  // },
-  // imageContainer: {
-  //   borderBottomColor: "grey",
-  //   borderBottomWidth: 0.5,
-  //   marginTop: 20,
-  //   alignItems: "center",
-  //   backgroundColor: '#999999',
-  //   justifyContent: "center"
-  // },
   loadinggif: {
     marginTop: 150,
     alignItems: "center",
     justifyContent: "center"
-  },
-  fontMontLight: {
-    fontFamily: "Montserrat-Light"
   }
 });
-
-// export default styles;

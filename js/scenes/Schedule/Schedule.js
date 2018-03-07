@@ -22,25 +22,27 @@ import {
 import { styles } from "./styles";
 
 const Schedule = ({ data, faves }) => (
-  <View style={styles.mainContainer}>
+  <View>
     <StatusBar barStyle="light-content" />
     <SectionList
       sections={data}
       renderItem={({ item }) => (
         <TouchableHighlight onPress={() => goToSession("Schedule", { item })}>
           <View style={styles.container}>
-            <Text>{item.title}</Text>
-            <Text style={styles.location}>{item.location}</Text>
-            {!!Object.keys(faves).includes(item.session_id) && (
-              <Icon
-                raised
-                size={15}
-                style={styles.icon}
-                name="ios-heart"
-                type="ionicon"
-                color="#f50"
-              />
-            )}
+            <Text style={styles.title}>{item.title}</Text>
+            <View style={styles.locationHeart}>
+              <Text style={styles.location}>{item.location}</Text>
+              {!!Object.keys(faves).includes(item.session_id) && (
+                <Icon
+                  raised
+                  size={15}
+                  style={styles.icon}
+                  name="ios-heart"
+                  type="ionicon"
+                  color="#f50"
+                />
+              )}
+            </View>
           </View>
         </TouchableHighlight>
       )}
