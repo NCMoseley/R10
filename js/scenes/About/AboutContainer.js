@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import About from "../About/About";
 import { connect } from "react-redux";
 import { View, Image, Text, ScrollView } from "react-native";
 import { styles } from "./styles";
@@ -9,7 +8,7 @@ import HeaderGradient from "../../components/gradients/headerGradient";
 import { Footer } from "../../components/footer/footer";
 import Accordian from "../../components/accordian/accordian";
 
-// Thank you Lindsey for below
+// Thank you, Lindsey, for below
 
 class AboutContainer extends Component {
   constructor() {

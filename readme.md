@@ -4,6 +4,16 @@ React Native App with the express purpose of blowing peoples minds
 
 ## Setup
 
+Download repo then run:
+
+npm install.
+
+then run:
+
+react-native run-ios
+
+## Dev Setup
+
 in root:
 
 react-native run-ios --simulator="iPhone SE"
@@ -16,12 +26,6 @@ In Android Studio:
 start device simulation first in AVD manager, then:
 
 react-native run-android
-
-## Git
-
-new branch created:
-
-withredux
 
 ## References
 
