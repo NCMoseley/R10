@@ -2,6 +2,8 @@
 
 React Native App with the express purpose of blowing peoples minds
 
+![Alt Text](https://github.com/NCMoseley/R10/blob/master/All%20tests%20Suite%201.gif)
+
 ## Setup
 
 Download repo then run:
