@@ -8,6 +8,6 @@ export const styles = StyleSheet.create({
     marginBottom: 10,
     color: "#9963ea",
     fontSize: 16,
-    fontFamily: "Montserrat-Light"
+    fontFamily: "Montserrat-Regular"
   }
 });

@@ -22,15 +22,14 @@ export const styles = StyleSheet.create({
     justifyContent: "center"
   },
   title: {
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: "bold",
     // backgroundColor: "#e6e6e6",
-    fontFamily: "Montserrat-Light"
+    fontFamily: "Montserrat-Regular"
   },
   dateTitle: {
-    fontSize: 20,
-    fontWeight: "bold",
-    fontStyle: "italic"
+    fontSize: 24,
+    fontWeight: "bold"
     // backgroundColor: "lightgrey"
   },
   titlesCodeOfConduct: {
