@@ -23,7 +23,12 @@ import { styles } from "./styles";
 
 const Schedule = ({ data, faves }) => (
   <View>
-    <StatusBar barStyle="light-content" />
+    <StatusBar
+      translucent
+      backgroundColor="rgba(0, 0, 0, 0.20)"
+      animated
+      barStyle="light-content"
+    />
     <SectionList
       sections={data}
       renderItem={({ item }) => (

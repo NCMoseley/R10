@@ -31,10 +31,15 @@ class Session extends Component {
     const { event, speaker, faves, toggleFave } = this.props;
     return (
       <ScrollView style={styles.mainContainer}>
-        <StatusBar barStyle="light-content" />
+        <StatusBar
+          translucent
+          backgroundColor="rgba(0, 0, 0, 0.20)"
+          animated
+          barStyle="light-content"
+        />
         <View style={styles.locationHeart}>
           <Text style={styles.location}>{event.item.location}</Text>
-          {!!Object.keys(faves).includes(event.item.session_id) ? (
+          {Object.keys(faves).includes(event.item.session_id) ? (
             <Icon
               onPress={() =>
                 toggleFave(
@@ -93,7 +98,7 @@ class Session extends Component {
             marginLeft={50}
             fontSize={15}
             buttonText={
-              !!Object.keys(faves).includes(event.item.session_id)
+              Object.keys(faves).includes(event.item.session_id)
                 ? "Remove Favorites"
                 : "Add Favorites"
             }

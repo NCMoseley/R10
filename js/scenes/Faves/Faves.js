@@ -25,7 +25,12 @@ class Faves extends React.Component {
 
     return (
       <View>
-        <StatusBar barStyle="light-content" />
+        <StatusBar
+          translucent
+          backgroundColor="rgba(0, 0, 0, 0.20)"
+          animated
+          barStyle="light-content"
+        />
         {theseFaves.map((fave, index) => {
           return (
             <View key={index}>
