@@ -43,3 +43,8 @@ https://github.com/science-girl/R10
 Thank you to Colin for support and inspiration:
 
 https://github.com/colinmj/R10
+
+## Android Screen Caps
+
+![Alt Text](https://github.com/NCMoseley/R10/blob/master/js/assets/images/Androidschedule.gif)
+![Alt Text](https://github.com/NCMoseley/R10/blob/master/js/assets/images/Androidfaves.gif)
