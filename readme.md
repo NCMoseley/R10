@@ -2,20 +2,20 @@
 
 React Native App design to exhibit cutting edge tech, but on a reasonably small scale.
 
-![Alt Text](https://github.com/NCMoseley/R10/blob/master/js/assets/images/AboutScreen.gif)
-![Alt Text](https://github.com/NCMoseley/R10/blob/master/js/assets/images/Schedule.gif)
-![Alt Text](https://github.com/NCMoseley/R10/blob/master/js/assets/images/Session.gif)
-![Alt Text](https://github.com/NCMoseley/R10/blob/master/js/assets/images/Session2.gif)
-![Alt Text](https://github.com/NCMoseley/R10/blob/master/js/assets/images/Faves.gif)
+![R10](https://github.com/NCMoseley/R10/blob/master/js/assets/images/AboutScreen.gif)
+![R10](https://github.com/NCMoseley/R10/blob/master/js/assets/images/Schedule.gif)
+![R10](https://github.com/NCMoseley/R10/blob/master/js/assets/images/Session.gif)
+![R10](https://github.com/NCMoseley/R10/blob/master/js/assets/images/Session2.gif)
+![R10](https://github.com/NCMoseley/R10/blob/master/js/assets/images/Faves.gif)
 
 ## Android
 
-![Alt Text](https://github.com/NCMoseley/R10/blob/master/js/assets/images/androidabout.gif)
-![Alt Text](https://github.com/NCMoseley/R10/blob/master/js/assets/images/androidsession.gif)
+![R10](https://github.com/NCMoseley/R10/blob/master/js/assets/images/androidabout.gif)
+![R10](https://github.com/NCMoseley/R10/blob/master/js/assets/images/androidsession.gif)
 
 ## Setup
 
-Download repo
+###Download repo
 
 In root run:
 
