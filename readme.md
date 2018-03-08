@@ -24,7 +24,13 @@ Make sure you have xcode, Android SDK, and npm or yarn.
 In root run:
 
 ```
-  npm install or yarn install
+  npm install
+```
+
+or
+
+```
+  yarn install
 ```
 
 Then run:
