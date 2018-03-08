@@ -33,7 +33,7 @@ or
   yarn install
 ```
 
-Then run:
+Then for demonstration with iOS run:
 
 ```
   react-native run-ios
