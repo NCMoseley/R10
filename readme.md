@@ -1,6 +1,6 @@
 # R10
 
-React Native App with the express purpose of blowing peoples minds
+React Native App design to exhibit cutting edge tech, but on a reasonably small scale.
 
 ![Alt Text](https://github.com/NCMoseley/R10/blob/master/js/assets/images/AboutScreen.gif)
 ![Alt Text](https://github.com/NCMoseley/R10/blob/master/js/assets/images/Schedule.gif)
@@ -8,9 +8,9 @@ React Native App with the express purpose of blowing peoples minds
 
 ## Setup
 
-Download repo then run:
+Download repo then in root run:
 
-npm install.
+npm install
 
 then run:
 
@@ -34,6 +34,12 @@ start device simulation first in AVD manager, then:
 
 react-native run-android
 
+## Technology used:
+
+React native, expo/ex-navigation for stacknavigation,
+tab navigation(iOS), and drawer navigation(android), react-native-vector-icons,
+react-linear-gradient, realm database coupled with redux for persistant state
+
 ## References
 
 Thank you to Lindsey Woo for constant support and code design inspiration:
@@ -46,7 +52,5 @@ https://github.com/colinmj/R10
 
 ## Android Screen Caps
 
-![Alt Text](https://github.com/NCMoseley/R10/blob/master/js/assets/images/Androidschedule.gif)
-![Alt Text](https://github.com/NCMoseley/R10/blob/master/js/assets/images/Androidfaves.gif)
 ![Alt Text](https://github.com/NCMoseley/R10/blob/master/js/assets/images/androidabout.gif)
 ![Alt Text](https://github.com/NCMoseley/R10/blob/master/js/assets/images/androidsession.gif)

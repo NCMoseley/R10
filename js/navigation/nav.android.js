@@ -104,7 +104,7 @@ class NavigationLayout extends React.Component {
       <Icon
         name={iconName}
         size={35}
-        color={isSelected ? colors.red : colors.mediumGrey}
+        color={isSelected ? colors.purple : colors.mediumGrey}
       />
     );
   }
