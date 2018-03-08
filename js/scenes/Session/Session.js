@@ -14,7 +14,6 @@ import {
   Image,
   ScrollView,
   FlatList,
-  StatusBar,
   SectionList,
   TouchableHighlight,
   TouchableOpacity
@@ -31,12 +30,6 @@ class Session extends Component {
     const { event, speaker, faves, toggleFave } = this.props;
     return (
       <ScrollView style={styles.mainContainer}>
-        <StatusBar
-          translucent
-          backgroundColor="rgba(0, 0, 0, 0.20)"
-          animated
-          barStyle="light-content"
-        />
         <View style={styles.locationHeart}>
           <Text style={styles.location}>{event.item.location}</Text>
           {Object.keys(faves).includes(event.item.session_id) ? (

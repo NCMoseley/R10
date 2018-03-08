@@ -13,7 +13,6 @@ import {
   Image,
   ScrollView,
   FlatList,
-  StatusBar,
   SectionList,
   TouchableHighlight,
   Linking

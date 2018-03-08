@@ -8,8 +8,8 @@ import {
   SectionList,
   TouchableOpacity,
   Image,
-  StatusBar,
-  Alert
+  Alert,
+  Platform
 } from "react-native";
 import { goToSpeaker } from "../../lib/navigationHelpers";
 import { styles } from "./styles";
@@ -25,12 +25,6 @@ class Faves extends React.Component {
 
     return (
       <View>
-        <StatusBar
-          translucent
-          backgroundColor="rgba(0, 0, 0, 0.20)"
-          animated
-          barStyle="light-content"
-        />
         {theseFaves.map((fave, index) => {
           return (
             <View key={index}>

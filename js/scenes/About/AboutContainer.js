@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { View, Image, Text, ScrollView, StatusBar } from "react-native";
+import { View, Image, Text, ScrollView } from "react-native";
 import { styles } from "./styles";
 import { fetchCodeOfConduct } from "../../redux/modules/about";
 import HeaderGradient from "../../components/gradients/headerGradient";
@@ -36,7 +36,6 @@ class AboutContainer extends Component {
       </View>
     ) : (
       <ScrollView style={styles.mainContainer}>
-        <StatusBar barStyle="light-content" />
         <View style={styles.imageContainer}>
           <Image
             style={styles.image}

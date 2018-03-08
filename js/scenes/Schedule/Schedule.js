@@ -15,7 +15,6 @@ import {
   Image,
   ScrollView,
   FlatList,
-  StatusBar,
   SectionList,
   TouchableHighlight
 } from "react-native";
@@ -23,12 +22,6 @@ import { styles } from "./styles";
 
 const Schedule = ({ data, faves }) => (
   <View>
-    <StatusBar
-      translucent
-      backgroundColor="rgba(0, 0, 0, 0.20)"
-      animated
-      barStyle="light-content"
-    />
     <SectionList
       sections={data}
       renderItem={({ item }) => (

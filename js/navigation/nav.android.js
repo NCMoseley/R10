@@ -20,7 +20,7 @@ class NavigationLayout extends React.Component {
     return (
       <DrawerNavigation
         id="main"
-        initialItem="Schedule"
+        initialItem="About"
         drawerWidth={200}
         renderHeader={this._renderHeader}
       >

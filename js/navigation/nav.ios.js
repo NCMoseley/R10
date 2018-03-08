@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import {
   StackNavigation,
   TabNavigation,
-  TabNavigationItem as TabItem,
-  StatusBar
+  TabNavigationItem as TabItem
 } from "@expo/ex-navigation";
 import Router from "./../navigation/routes";
 import { colors, typography } from "../config/styles";

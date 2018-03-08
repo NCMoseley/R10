@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, View, AppRegistry } from "react-native";
+import { Text, View, AppRegistry, StatusBar, Platform } from "react-native";
 import {
   NavigationProvider,
   StackNavigation,
@@ -20,6 +20,10 @@ export default class App extends Component {
     return (
       <Provider store={Store}>
         <NavigationProvider context={navigationContext} router={Router}>
+          <StatusBar
+            barStyle="light-content"
+            hidden={Platform.OS === "android"}
+          />
           <StackNavigation
             navigatorUID="root"
             initialRoute={Router.getRoute("Layout")}
