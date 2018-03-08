@@ -15,7 +15,7 @@ React Native App design to exhibit cutting edge tech, but on a reasonably small 
 
 ## Setup
 
-**Download repo**
+**Download repo then,**
 
 In root run:
 
