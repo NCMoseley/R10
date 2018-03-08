@@ -48,3 +48,5 @@ https://github.com/colinmj/R10
 
 ![Alt Text](https://github.com/NCMoseley/R10/blob/master/js/assets/images/Androidschedule.gif)
 ![Alt Text](https://github.com/NCMoseley/R10/blob/master/js/assets/images/Androidfaves.gif)
+![Alt Text](https://github.com/NCMoseley/R10/blob/master/js/assets/images/androidabout.gif)
+![Alt Text](https://github.com/NCMoseley/R10/blob/master/js/assets/images/androidsession.gif)
