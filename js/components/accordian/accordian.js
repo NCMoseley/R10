@@ -49,7 +49,7 @@ class Accordian extends Component {
                 {
                   rotate: this.state.rotate.interpolate({
                     inputRange: [0, 1],
-                    outputRange: ["135deg", "270deg"]
+                    outputRange: ["121deg", "270deg"]
                   })
                 }
               ]
@@ -64,7 +64,7 @@ class Accordian extends Component {
                 {
                   rotate: this.state.rotate.interpolate({
                     inputRange: [0, 1],
-                    outputRange: ["-45deg", "180deg"]
+                    outputRange: ["-31deg", "180deg"]
                   })
                 }
               ]

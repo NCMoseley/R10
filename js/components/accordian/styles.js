@@ -10,12 +10,16 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     fontFamily: "Montserrat-Regular"
   },
+  paragraphText: {
+    color: "black",
+    fontFamily: "Montserrat-Light"
+  },
   horiBar: {
     width: 9,
     height: 1,
     position: "relative",
-    top: 5,
-    backgroundColor: "#9963ea"
+    top: 3.3,
+    backgroundColor: "#cf392a"
   },
   vertBar: {
     width: 1,
@@ -23,6 +27,6 @@ export const styles = StyleSheet.create({
     position: "relative",
     left: 4,
     top: 4,
-    backgroundColor: "#9963ea"
+    backgroundColor: "#cf392a"
   }
 });
