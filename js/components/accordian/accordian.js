@@ -31,11 +31,11 @@ class Accordian extends Component {
     !this.state.opened
       ? Animated.timing(this.state.rotate, {
           toValue: 1,
-          duration: 333
+          duration: 500
         }).start()
       : Animated.timing(this.state.rotate, {
           toValue: 0,
-          duration: 333
+          duration: 500
         }).start();
   }
   render() {
@@ -49,7 +49,7 @@ class Accordian extends Component {
                 {
                   rotate: this.state.rotate.interpolate({
                     inputRange: [0, 1],
-                    outputRange: ["0deg", "270deg"]
+                    outputRange: ["135deg", "270deg"]
                   })
                 }
               ]
@@ -64,7 +64,7 @@ class Accordian extends Component {
                 {
                   rotate: this.state.rotate.interpolate({
                     inputRange: [0, 1],
-                    outputRange: ["0deg", "360deg"]
+                    outputRange: ["-45deg", "180deg"]
                   })
                 }
               ]

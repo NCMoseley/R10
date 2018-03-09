@@ -13,14 +13,14 @@ export const styles = StyleSheet.create({
   horiBar: {
     width: 9,
     height: 1,
-    position: "absolute",
-    top: 8,
+    position: "relative",
+    top: 5,
     backgroundColor: "#9963ea"
   },
   vertBar: {
     width: 1,
     height: 9,
-    position: "absolute",
+    position: "relative",
     left: 4,
     top: 4,
     backgroundColor: "#9963ea"
