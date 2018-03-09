@@ -1,23 +1,9 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
+import React from "react";
 import PropTypes from "prop-types";
 import moment from "moment";
-import Router from "../../navigation/routes";
-import Store from "../../redux/store";
-import { NavigationActions } from "@expo/ex-navigation";
 import Icon from "react-native-vector-icons/Ionicons";
 import { goToSession } from "../../lib/navigationHelpers";
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  ScrollView,
-  FlatList,
-  SectionList,
-  TouchableHighlight
-} from "react-native";
+import { Text, View, SectionList, TouchableHighlight } from "react-native";
 import { styles } from "./styles";
 
 const Schedule = ({ data, faves }) => (
@@ -53,4 +39,10 @@ const Schedule = ({ data, faves }) => (
     />
   </View>
 );
+
+Schedule.propTypes = {
+  data: PropTypes.array.isRequired,
+  faves: PropTypes.object.isRequired
+};
+
 export default Schedule;

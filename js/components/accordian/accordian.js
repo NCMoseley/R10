@@ -81,6 +81,8 @@ class Accordian extends Component {
             )}
           </Animated.Text>
         </TouchableOpacity>
+
+        
       </View>
     );
   }

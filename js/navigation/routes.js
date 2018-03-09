@@ -1,6 +1,5 @@
 import AboutContainer from "../scenes/About";
 import { createRouter } from "@expo/ex-navigation";
-// import './navigationlayout';
 import NavigationLayout from "./nav";
 import ScheduleContainer from "../scenes/Schedule";
 import FavesContainer from "../scenes/Faves";
@@ -8,7 +7,6 @@ import SessionContainer from "../scenes/Session";
 import SpeakerContainer from "../scenes/Speaker";
 
 export default createRouter(() => ({
-  // home: () => HomeScreen,
   About: () => AboutContainer,
   Schedule: () => ScheduleContainer,
   Layout: () => NavigationLayout,

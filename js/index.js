@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import { Text, View, AppRegistry, StatusBar, Platform } from "react-native";
+import { StatusBar, Platform } from "react-native";
 import {
   NavigationProvider,
   StackNavigation,
   NavigationContext
 } from "@expo/ex-navigation";
 import Router from "./navigation/routes";
-import About from "./scenes/About/";
 import Store from "./redux/store";
 import { Provider } from "react-redux";
 
@@ -33,16 +32,3 @@ export default class App extends Component {
     );
   }
 }
-
-// Without Routes:
-
-// export default class App extends Component {
-//   render() {
-//     return (
-//       // style={styles.container}
-//       <View>
-//         <AboutContainer />
-//       </View>
-//     );
-//   }
-// }

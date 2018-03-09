@@ -1,11 +1,10 @@
 import { SPEAKER_URL } from "../../config/endpoints";
 import { formatDataObject } from "../../lib/helpers";
-
 const GET_SPEAKER_LOADING = "GET_SPEAKER_LOADING";
 const GET_SPEAKER_SUCCESS = "GET_SPEAKER_SUCCESS";
 const GET_SPEAKER_ERROR = "GET_SPEAKER_ERROR";
 
-// ACTION CREATORS - FUNCTIONS THAT RETURN OBJECT
+// ACTION CREATORS
 const getSpeakerLoading = () => ({
   type: GET_SPEAKER_LOADING
 });
@@ -21,7 +20,7 @@ const getSpeakerError = error => ({
 });
 
 export const fetchSpeaker = speakerId => dispatch => {
-  dispatch(getSpeakerLoading()); // set loading icon before fetching the data
+  dispatch(getSpeakerLoading());
   const speakerData = `${SPEAKER_URL}"${speakerId}"`;
   fetch(speakerData)
     .then(res => res.json())

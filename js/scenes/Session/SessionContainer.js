@@ -2,14 +2,11 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Session from "./Session";
 import { connect } from "react-redux";
-import { Text, Image, View } from "react-native";
+import { Image, View } from "react-native";
 import { styles } from "./styles";
-import { fetchSpeaker } from "../../redux/modules/speaker";
-import router from "../../navigation/routes";
 import { formatDataObject } from "../../lib/helpers";
 import { fetchFaves } from "../../redux/modules/faves";
 import HeaderGradient from "../../components/gradients/headerGradient";
-// import { ScrollView, View, Image, Text, ActivityIndicator } from "react-native";
 
 class SessionContainer extends Component {
   constructor(props) {
@@ -39,12 +36,11 @@ class SessionContainer extends Component {
         let thisName = formatDataObject(name);
         this.setState({ speaker: thisName });
       })
-
-      .catch(err => console.log(err));
+      .catch(err => err);
   }
 
   render() {
-    const { loading, data } = this.props;
+    const { loading } = this.props;
 
     return loading ? (
       <View style={styles.loadinggif}>
@@ -56,7 +52,6 @@ class SessionContainer extends Component {
         speaker={this.state.speaker}
         faves={this.props.faves}
       />
-      // <Text>Test</Text>
     );
   }
 }
@@ -68,11 +63,11 @@ const mapStateToProps = state => ({
 });
 
 SessionContainer.propTypes = {
-  // loading: PropTypes.bool.isRequired,
-  // data: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
-  faves: PropTypes.object.isRequired
-  // dispatch: PropTypes.func.isRequired,
-  // route: PropTypes.object.isRequired
+  loading: PropTypes.bool.isRequired,
+  data: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+  faves: PropTypes.object.isRequired,
+  dispatch: PropTypes.func.isRequired,
+  route: PropTypes.object.isRequired
 };
 
 export default connect(mapStateToProps)(SessionContainer);

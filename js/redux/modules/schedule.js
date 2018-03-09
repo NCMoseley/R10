@@ -1,11 +1,9 @@
 import { SCHEDULE_URL } from "../../config/endpoints";
-import { formatSessionData } from "../../lib/helpers";
-
 const GET_SCHEDULE_LOADING = "GET_SCHEDULE_LOADING";
 const GET_SCHEDULE_SUCCESS = "GET_SCHEDULE_SUCCESS";
 const GET_SCHEDULE_ERROR = "GET_SCHEDULE_ERROR";
 
-// ACTION CREATORS - FUNCTIONS THAT RETURN OBJECT
+// ACTION CREATORS
 const getScheduleLoading = () => ({
   type: GET_SCHEDULE_LOADING
 });
@@ -21,12 +19,11 @@ const getScheduleError = error => ({
 });
 
 export const fetchSchedule = () => dispatch => {
-  dispatch(getScheduleLoading()); // set loading icon before fetching the data
+  dispatch(getScheduleLoading());
 
   fetch(SCHEDULE_URL)
     .then(res => res.json())
     .then(data => dispatch(getSchedule(data)))
-    // .then(data => dispatch(getSchedule(formatSessionData(data))))
     .catch(err => dispatch(getScheduleError(err)));
 };
 

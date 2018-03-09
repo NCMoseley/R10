@@ -1,19 +1,13 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
+import React from "react";
 import PropTypes from "prop-types";
 import Icon from "react-native-vector-icons/Ionicons";
 import { removeSpeaker } from "../../lib/navigationHelpers";
 import GradientButton from "../../components/gradients/gradientButton";
-import moment from "moment";
 import {
-  Platform,
-  StyleSheet,
   Text,
   View,
   Image,
   ScrollView,
-  FlatList,
-  SectionList,
   TouchableHighlight,
   Linking
 } from "react-native";
@@ -29,7 +23,6 @@ const Speaker = ({ speaker }) => {
             active
             style={{
               padding: 20
-              // paddingRight: 40
             }}
             name="ios-close"
             color="white"

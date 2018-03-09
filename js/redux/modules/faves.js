@@ -1,7 +1,7 @@
-import realm, { queryFaves, createFave, deleteFave } from "../../config/model";
+import { queryFaves, createFave, deleteFave } from "../../config/model";
 
-GET_FAVES = "GET_FAVES";
-TOGGLE_FAVES = "TOGGLE_FAVES";
+const GET_FAVES = "GET_FAVES";
+const TOGGLE_FAVES = "TOGGLE_FAVES";
 
 const getFaves = faves => ({
   type: GET_FAVES,
@@ -16,7 +16,7 @@ export const toggleFave = (session_id, onOrOff) => ({
 export const fetchFaves = () => dispatch => {
   const data = queryFaves();
   const faves = {};
-  data.map((item, key) => (faves[item.id] = "true"));
+  data.map(item => (faves[item.id] = "true"));
   dispatch(getFaves(faves));
 };
 
@@ -25,7 +25,6 @@ export const fetchFaves = () => dispatch => {
 export default (
   state = {
     loading: false,
-    // NOTE 
     faves: {},
     error: ""
   },
@@ -39,12 +38,11 @@ export default (
       };
     }
     case TOGGLE_FAVES: {
-      // console.log("toggle fave is running");
       if (action.onOrOff) createFave(action.session_id);
       else deleteFave(action.session_id);
       const data = queryFaves();
       const faves = {};
-      data.map((item, key) => (faves[item.id] = "true"));
+      data.map(item => (faves[item.id] = "true"));
       return { ...state, loading: false, faves, error: "" };
     }
     default:

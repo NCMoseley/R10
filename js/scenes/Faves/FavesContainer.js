@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-// import realm, { queryFaves } from "../../config/model";
+import PropTypes from "prop-types";
 import { fetchFaves } from "../../redux/modules/faves";
 import { popScene } from "../../lib/navigationHelpers";
-// import { formatSessionData } from "../../lib/helpers";
 import HeaderGradient from "../../components/gradients/headerGradient";
-
 import Faves from "./Faves";
 
 class FavesContainer extends Component {
@@ -32,6 +30,11 @@ class FavesContainer extends Component {
   }
 }
 
+FavesContainer.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  faves: PropTypes.object.isRequired,
+  data: PropTypes.array.isRequired
+};
 const mapStateToProps = state => ({
   faves: state.faves.faves,
   data: state.schedule.data

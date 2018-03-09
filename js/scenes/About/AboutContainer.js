@@ -54,7 +54,7 @@ class AboutContainer extends Component {
         </View>
         <View style={styles.container}>
           <Text>
-            Don't miss the R10 conference that will take place on June 27, 2018
+            Do not miss the R10 conference that will take place on June 27, 2018
             in Vancouver, BC.
           </Text>
         </View>

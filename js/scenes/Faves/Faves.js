@@ -1,17 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import moment from "moment";
-import propTypes from "prop-types";
-import {
-  Text,
-  View,
-  SectionList,
-  TouchableOpacity,
-  Image,
-  Alert,
-  Platform
-} from "react-native";
-import { goToSpeaker } from "../../lib/navigationHelpers";
+import PropTypes from "prop-types";
+import { Text, View, TouchableOpacity, Alert } from "react-native";
 import { styles } from "./styles";
 import Icon from "react-native-vector-icons/Ionicons";
 import { toggleFave } from "../../redux/modules/faves";
@@ -56,28 +47,6 @@ class Faves extends React.Component {
           );
         })}
       </View>
-      // <SectionList
-      //   stickySectionHeadersEnabled={false}
-      //   sections={data}
-      //   renderItem={({ item }) => (
-      //     <View>
-      //       <TouchableOpacity onPress={() => goToSession(item)}>
-      //         <Text>{item.title}</Text>
-      //       </TouchableOpacity>
-      //       <View>
-      //         <Text>{item.location}</Text>
-      //         <Text>{}</Text>
-      //         {faves.includes(item.session_id) && <FaveIcon />}
-      //       </View>
-      //     </View>
-      //   )}
-      //   renderSectionHeader={({ section }) => (
-      //     <Text style={styles.timeText}>
-      //       {moment.unix(section.title).format("LT")}
-      //     </Text>
-      //   )}
-      //   keyExtractor={(item, index) => index}
-      // />
     );
   }
 }
@@ -87,5 +56,11 @@ const mapDispatchToProps = dispatch => ({
     dispatch(toggleFave(session_id, onOrOff));
   }
 });
+
+Faves.propTypes = {
+  data: PropTypes.array.isRequired,
+  faves: PropTypes.object.isRequired,
+  toggleFave: PropTypes.func.isRequired
+};
 
 export default connect(null, mapDispatchToProps)(Faves);

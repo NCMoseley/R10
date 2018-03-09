@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import {
   StackNavigation,
   DrawerNavigation,
@@ -26,7 +26,6 @@ class NavigationLayout extends React.Component {
       >
         <DrawerNavigationItem
           id="About"
-          // selectedStyle={styles.selectedItemStyle}
           renderTitle={isSelected => this.renderTitle(isSelected, "About")}
           renderIcon={isSelected =>
             this.renderIcon(isSelected, "md-information-circle")
@@ -41,7 +40,6 @@ class NavigationLayout extends React.Component {
 
         <DrawerNavigationItem
           id="Schedule"
-          // selectedStyle={styles.selectedItemStyle}
           renderTitle={isSelected => this.renderTitle(isSelected, "Schedule")}
           renderIcon={isSelected => this.renderIcon(isSelected, "md-calendar")}
         >
@@ -53,7 +51,6 @@ class NavigationLayout extends React.Component {
         </DrawerNavigationItem>
         <DrawerNavigationItem
           id="Faves"
-          // selectedStyle={styles.selectedItemStyle}
           renderTitle={isSelected => this.renderTitle(isSelected, "Faves")}
           renderIcon={isSelected => this.renderIcon(isSelected, "md-heart")}
         >
@@ -68,7 +65,6 @@ class NavigationLayout extends React.Component {
           onPress={() => {
             Alert.alert("Cannot find GPS, please try again later.......");
           }}
-          // selectedStyle={styles.selectedItemStyle}
           renderTitle={isSelected => this.renderTitle(isSelected, "Map")}
           renderIcon={isSelected => this.renderIcon(isSelected, "md-map")}
         >

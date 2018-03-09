@@ -19,7 +19,6 @@ export const styles = StyleSheet.create({
   },
   containerHeader: {
     paddingTop: 95,
-    // alignItems: "center",
     flexDirection: "row",
     justifyContent: "center"
   },

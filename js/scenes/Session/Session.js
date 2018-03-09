@@ -1,23 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { createFave, deleteFave } from "../../config/model";
 import { toggleFave } from "../../redux/modules/faves";
 import GradientButton from "../../components/gradients/gradientButton";
 import moment from "moment";
 import Icon from "react-native-vector-icons/Ionicons";
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  ScrollView,
-  FlatList,
-  SectionList,
-  TouchableHighlight,
-  TouchableOpacity
-} from "react-native";
+import { Text, View, Image, ScrollView, TouchableOpacity } from "react-native";
 import { goToSpeaker } from "../../lib/navigationHelpers";
 import { styles } from "./styles";
 
@@ -115,8 +103,8 @@ const mapDispatchToProps = dispatch => ({
 Session.propTypes = {
   faves: PropTypes.object.isRequired,
   toggleFave: PropTypes.func.isRequired,
-  event: PropTypes.object.isRequired
-  // speaker: PropTypes.oneOfType([PropTypes.object, PropTypes.array])
+  event: PropTypes.object.isRequired,
+  speaker: PropTypes.oneOfType([PropTypes.object, PropTypes.string])
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Session);
