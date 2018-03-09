@@ -6,7 +6,8 @@ import {
   LayoutAnimation,
   Animated,
   Platform,
-  UIManager
+  UIManager,
+  View
 } from "react-native";
 import { styles } from "./styles";
 
@@ -14,7 +15,8 @@ class Accordian extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      opened: false
+      opened: false,
+      rotate: new Animated.Value(0)
     };
 
     if (Platform.OS === "android") {
@@ -26,19 +28,60 @@ class Accordian extends Component {
   _onPress() {
     LayoutAnimation.easeInEaseOut();
     this.setState({ opened: !this.state.opened });
+    !this.state.opened
+      ? Animated.timing(this.state.rotate, {
+          toValue: 1,
+          duration: 333
+        }).start()
+      : Animated.timing(this.state.rotate, {
+          toValue: 0,
+          duration: 333
+        }).start();
   }
   render() {
     const { title, description } = this.props;
     return (
-      <TouchableOpacity onPress={this._onPress}>
-        <Animated.Text style={styles.contentHeader}>
-          {this.state.opened ? "-" : "+"}
-          {title}
-        </Animated.Text>
-        {this.state.opened && (
-          <Text style={styles.paragraphText}>{description}</Text>
-        )}
-      </TouchableOpacity>
+      <View>
+        <Animated.View
+          style={[
+            {
+              transform: [
+                {
+                  rotate: this.state.rotate.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: ["0deg", "270deg"]
+                  })
+                }
+              ]
+            },
+            styles.vertBar
+          ]}
+        />
+        <Animated.View
+          style={[
+            {
+              transform: [
+                {
+                  rotate: this.state.rotate.interpolate({
+                    inputRange: [0, 1],
+                    outputRange: ["0deg", "360deg"]
+                  })
+                }
+              ]
+            },
+            styles.horiBar
+          ]}
+        />
+
+        <TouchableOpacity onPress={this._onPress}>
+          <Animated.Text style={styles.contentHeader}>
+            {this.state.opened && (
+              <Text style={styles.paragraphText}>{description}</Text>
+            )}
+            {title}
+          </Animated.Text>
+        </TouchableOpacity>
+      </View>
     );
   }
 }

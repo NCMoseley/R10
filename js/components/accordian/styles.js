@@ -9,5 +9,20 @@ export const styles = StyleSheet.create({
     color: "#9963ea",
     fontSize: 16,
     fontFamily: "Montserrat-Regular"
+  },
+  horiBar: {
+    width: 9,
+    height: 1,
+    position: "absolute",
+    top: 8,
+    backgroundColor: "#9963ea"
+  },
+  vertBar: {
+    width: 1,
+    height: 9,
+    position: "absolute",
+    left: 4,
+    top: 4,
+    backgroundColor: "#9963ea"
   }
 });

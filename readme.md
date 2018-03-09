@@ -4,7 +4,7 @@ React Native App design to exhibit cutting edge tech, but on a reasonably small 
 
 ## Examples of App running on IOS.
 
-<img alt="iOS example gif" src="/js/assets/images/AboutScreen.gif" width="376"><img alt="iOS example gif" src="/js/assets/images/Schedule.gif" width="376"><img alt="iOS example gif" src="/js/assets/images/Session2.gif" width="376">
+<img alt="example gif" src="/js/assets/images/AboutScreen.gif" width="376"><img alt="iOS example gif" src="/js/assets/images/Schedule.gif" width="376"><img alt="iOS example gif" src="/js/assets/images/Session2.gif" width="376">
 <img alt="iOS example gif" src="/js/assets/images/Faves.gif" width="376">
 
 ## Examples of App running on Android
@@ -79,4 +79,10 @@ Thank you to Colin for support and inspiration:
 
 ```
   https://github.com/colinmj/R10
+```
+
+Thank you Ian for pushing the bar all the time:
+
+```
+https://github.com/htichcock/react-native-R10
 ```
