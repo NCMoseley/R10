@@ -5,10 +5,12 @@ import speakerReducer from "./modules/speaker";
 import favesReducer from "./modules/faves";
 import { combineReducers } from "redux";
 
-export default (rootReducer = combineReducers({
+const rootReducer = combineReducers({
   navigation: NavigationReducer,
   about: aboutReducer,
   schedule: scheduleReducer,
   speaker: speakerReducer,
   faves: favesReducer
-}));
+});
+
+export default rootReducer;

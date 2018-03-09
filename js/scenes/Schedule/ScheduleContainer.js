@@ -1,3 +1,5 @@
+/* global require */
+
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Schedule from "../Schedule/Schedule";
