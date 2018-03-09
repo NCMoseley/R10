@@ -66,7 +66,7 @@ class NavigationLayout extends React.Component {
         <DrawerNavigationItem
           id="Map"
           onPress={() => {
-            Alert.alert("Cannot find GPS.......");
+            Alert.alert("Cannot find GPS, please try again later.......");
           }}
           // selectedStyle={styles.selectedItemStyle}
           renderTitle={isSelected => this.renderTitle(isSelected, "Map")}

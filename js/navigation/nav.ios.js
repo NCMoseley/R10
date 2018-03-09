@@ -70,7 +70,7 @@ class NavigationLayout extends Component {
           title="Map"
           renderTitle={this.renderTitle}
           onPress={() => {
-            Alert.alert("Cannot find GPS.......");
+            Alert.alert("Cannot find GPS, please try again later.......");
           }}
           renderIcon={isSelected =>
             this.renderIcon(isSelected, "ios-map-outline")
