@@ -4,18 +4,15 @@ React Native App design to exhibit cutting edge tech, but on a reasonably small 
 
 ## Examples of App running on IOS.
 
-![R10](https://github.com/NCMoseley/R10/blob/master/js/assets/images/AboutScreen.gif?&s=376)
-<img src="https://github.com/NCMoseley/R10/blob/master/js/assets/images/AboutScreen.gif" width="376">
-<img src="/js/assets/images/AboutScreen.gif" width="376">
-![R10](https://github.com/NCMoseley/R10/blob/master/js/assets/images/Schedule.gif)
-![R10](https://github.com/NCMoseley/R10/blob/master/js/assets/images/Session.gif)
-![R10](https://github.com/NCMoseley/R10/blob/master/js/assets/images/Session2.gif)
-![R10](https://github.com/NCMoseley/R10/blob/master/js/assets/images/Faves.gif)
+<img alt="iOS example gif" src="/js/assets/images/AboutScreen.gif" width="376">
+<img alt="iOS example gif" src="/js/assets/images/Schedule.gif" width="376">
+<img alt="iOS example gif" src="/js/assets/images/Session2.gif" width="376">
+<img alt="iOS example gif" src="/js/assets/images/Faves.gif" width="376">
 
 ## Examples of App running on Android
 
-![R10](https://github.com/NCMoseley/R10/blob/master/js/assets/images/androidabout.gif)
-![R10](https://github.com/NCMoseley/R10/blob/master/js/assets/images/androidsession.gif)
+![R10 andriod example gif](/js/assets/images/androidabout.gif)
+![R10 andriod example gif](/js/assets/images/androidsession.gif)
 
 ## Setup
 
