@@ -88,7 +88,8 @@ class NavigationLayout extends React.Component {
         style={{
           fontFamily: typography.fontMain,
           fontSize: 20,
-          color: isSelected ? colors.red : colors.mediumGrey
+          color: isSelected ? colors.red : colors.mediumGrey,
+          paddingLeft: 10
         }}
       >
         {title}
