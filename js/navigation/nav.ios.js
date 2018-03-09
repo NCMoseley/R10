@@ -20,7 +20,7 @@ class NavigationLayout extends Component {
       <TabNavigation
         id="main"
         navigatorUID="main"
-        initialTab="Schedule"
+        initialTab="About"
         tabBarColor={colors.black}
       >
         <TabItem

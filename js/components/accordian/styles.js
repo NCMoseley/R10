@@ -1,8 +1,6 @@
 import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
-  paragraphText: { margin: 5, fontFamily: "Montserrat-Light" },
-
   contentHeader: {
     marginTop: 10,
     marginBottom: 10,
@@ -12,7 +10,8 @@ export const styles = StyleSheet.create({
   },
   paragraphText: {
     color: "black",
-    fontFamily: "Montserrat-Light"
+    fontFamily: "Montserrat-Light",
+    paddingTop: 20
   },
   horiBar: {
     width: 9,

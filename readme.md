@@ -86,3 +86,5 @@ Thank you Ian for pushing the bar all the time:
 ```
 https://github.com/htichcock/react-native-R10
 ```
+
+![R10 combination example gif](/js/assets/images/combination.gif)

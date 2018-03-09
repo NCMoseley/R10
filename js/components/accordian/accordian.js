@@ -75,10 +75,10 @@ class Accordian extends Component {
 
         <TouchableOpacity onPress={this._onPress}>
           <Animated.Text style={styles.contentHeader}>
+            {!this.state.opened && <Text>{title}</Text>}
             {this.state.opened && (
               <Text style={styles.paragraphText}>{description}</Text>
             )}
-            {title}
           </Animated.Text>
         </TouchableOpacity>
       </View>
